@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>void</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌐 Networking Cheatsheet</h1>
+  </header>
+
+  <main class="grid">
+
+    <section>
+      <h2>🛰 HTTP Status Codes</h2>
+      <p class="desc">Indicate whether a client’s request was successful, redirected, or failed.  
+      Grouped by their first digit:</p>
+      <ul class="legend">
+        <li><span class="success">2xx</span> Success</li>
+        <li><span class="redirect">3xx</span> Redirection</li>
+        <li><span class="client">4xx</span> Client Errors</li>
+        <li><span class="server">5xx</span> Server Errors</li>
+      </ul>
+      <table>
+        <thead><tr><th>Code</th><th>Status</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="success">200</td><td>OK</td><td>Request successful — server returned data as expected.</td></tr>
+          <tr><td class="success">201</td><td>Created</td><td>Resource successfully created (often after POST).</td></tr>
+          <tr><td class="redirect">301</td><td>Moved Permanently</td><td>Resource has a new permanent URL.</td></tr>
+          <tr><td class="redirect">302</td><td>Found</td><td>Temporary redirect — commonly used during login flows.</td></tr>
+          <tr><td class="client">400</td><td>Bad Request</td><td>Malformed syntax or invalid data in client request.</td></tr>
+          <tr><td class="client">401</td><td>Unauthorized</td><td>Requires authentication or token verification.</td></tr>
+          <tr><td class="client">403</td><td>Forbidden</td><td>Access denied despite valid credentials.</td></tr>
+          <tr><td class="client">404</td><td>Not Found</td><td>Requested resource doesn’t exist on the server.</td></tr>
+          <tr><td class="client">429</td><td>Too Many Requests</td><td>Rate limit exceeded — slow down your requests.</td></tr>
+          <tr><td class="server">500</td><td>Internal Server Error</td><td>Unexpected server-side problem.</td></tr>
+          <tr><td class="server">502</td><td>Bad Gateway</td><td>Received invalid response from upstream server.</td></tr>
+          <tr><td class="server">503</td><td>Service Unavailable</td><td>Server overloaded or under maintenance.</td></tr>
+          <tr><td class="server">504</td><td>Gateway Timeout</td><td>No timely response from the next server in chain.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>🧩 OSI Model (7 Layers)</h2>
+      <p class="desc">Defines how data travels through networks — from physical signals to application-level communication.</p>
+      <ol class="osi">
+        <li><b>7. Application</b> – User interaction level.  
+          <i>Protocols:</i> HTTP, HTTPS, DNS, FTP, SMTP  
+          <i>Role:</i> Interfaces apps with the network (e.g., web browsing, email).</li>
+
+        <li><b>6. Presentation</b> – Data format & encryption.  
+          <i>Protocols:</i> SSL/TLS, JSON, XML  
+          <i>Role:</i> Converts, compresses, and encrypts data for secure transmission.</li>
+
+        <li><b>5. Session</b> – Connection management.  
+          <i>Protocols:</i> NetBIOS, RPC  
+          <i>Role:</i> Starts, maintains, and terminates sessions between hosts.</li>
+
+        <li><b>4. Transport</b> – Data reliability & flow control.  
+          <i>Protocols:</i> TCP, UDP  
+          <i>Role:</i> Ensures ordered delivery (TCP) or fast, connectionless transfer (UDP).</li>
+
+        <li><b>3. Network</b> – Logical routing & addressing.  
+          <i>Protocols:</i> IP, ICMP, BGP  
+          <i>Role:</i> Moves packets between networks based on IP addresses.  
+          <i>Note:</i> <b>BGP ASN (Autonomous System Number)</b> identifies routing domains.  
+          → <b>AWS ASN:</b> <code>7224</code> | <b>Customer ASN:</b> <code>65000</code></li>
+
+        <li><b>2. Data Link</b> – Frame delivery between nodes.  
+          <i>Protocols:</i> Ethernet, ARP  
+          <i>Role:</i> Provides error detection, defines MAC addresses.</li>
+
+        <li><b>1. Physical</b> – Transmission medium.  
+          <i>Components:</i> Cables, Fiber, Radio waves  
+          <i>Role:</i> Converts bits into physical signals.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>🔌 Common Network Ports</h2>
+      <p class="desc">Every network service listens on a specific port.  
+      TCP = reliable (ordered), UDP = faster (no guarantee).</p>
+      <table>
+        <thead><tr><th>Port</th><th>Protocol</th><th>Service / Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>20 / 21</td><td>TCP</td><td>FTP – File Transfer Protocol (data/control)</td></tr>
+          <tr><td>22</td><td>TCP</td><td>SSH – Secure login, remote command execution</td></tr>
+          <tr><td>23</td><td>TCP</td><td>Telnet – Unsecured remote access (deprecated)</td></tr>
+          <tr><td>25</td><td>TCP</td><td>SMTP – Send mail between servers</td></tr>
+          <tr><td>53</td><td>TCP/UDP</td><td>DNS – Domain name resolution</td></tr>
+          <tr><td>67 / 68</td><td>UDP</td><td>DHCP – Assign IP addresses automatically</td></tr>
+          <tr><td>80</td><td>TCP</td><td>HTTP – Standard web traffic</td></tr>
+          <tr><td>110</td><td>TCP</td><td>POP3 – Retrieve emails</td></tr>
+          <tr><td>143</td><td>TCP</td><td>IMAP – Manage email remotely</td></tr>
+          <tr><td>443</td><td>TCP</td><td>HTTPS – Encrypted web traffic (TLS/SSL)</td></tr>
+          <tr><td>3306</td><td>TCP</td><td>MySQL Database connection</td></tr>
+          <tr><td>3389</td><td>TCP</td><td>RDP – Windows Remote Desktop</td></tr>
+          <tr><td>5432</td><td>TCP</td><td>PostgreSQL Database</td></tr>
+          <tr><td>6379</td><td>TCP</td><td>Redis – In-memory cache service</td></tr>
+          <tr><td>500 / 4500</td><td>UDP</td><td>IPSec VPN tunnels</td></tr>
+          <tr><td>1024–65535</td><td>TCP/UDP</td><td>Ephemeral ports for client responses</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 • Made for <b>Bunny 🐇</b> | Learn Fast, Remember Deep</p>
+  </footer>
+</body>
+</html>
