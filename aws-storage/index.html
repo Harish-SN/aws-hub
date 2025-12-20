@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Storage Services — Complete Revision (2025)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Storage Services — Complete Revision (2025)</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      This revision covers all major AWS <strong>storage services</strong> including
+      <strong>object, block, file storage, hybrid storage, cold archival, and data transfer tools</strong>.
+    </p>
+  </section>
+
+  <!-- ===================== S3 ===================== -->
+  <article>
+    <h2>Amazon S3 (Simple Storage Service)</h2>
+    <p>
+      <strong>Type:</strong> Object Storage<br>
+      <strong>Durability:</strong> 11 9’s (99.999999999%)<br>
+      <strong>Use Cases:</strong> Static websites, backups, data lakes, analytics
+    </p>
+
+    <h3>Overview</h3>
+    <p>S3 is AWS’s infinitely scalable object storage service.</p>
+    <ul>
+      <li>Storage classes: Standard, IA, One Zone-IA, Glacier, Glacier Deep Archive.</li>
+      <li>Strong read-after-write consistency for all operations.</li>
+      <li>Foundation for Athena, Redshift, EMR, Glue.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== EBS ===================== -->
+  <article>
+    <h2>Amazon EBS (Elastic Block Store)</h2>
+    <p>
+      <strong>Type:</strong> Block Storage for EC2<br>
+      <strong>Use Cases:</strong> Databases, low-latency transactional workloads
+    </p>
+
+    <h3>Overview</h3>
+    <p>EBS provides persistent block storage volumes attached to EC2 instances.</p>
+    <ul>
+      <li>Volume types: gp3, io2, io2 Block Express.</li>
+      <li>Volumes are <strong>single-AZ</strong> with snapshot-based durability.</li>
+      <li>Snapshots are stored in S3 and can be copied cross-region.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== EFS ===================== -->
+  <article>
+    <h2>Amazon EFS (Elastic File System)</h2>
+    <p>
+      <strong>Type:</strong> Managed NFS File System<br>
+      <strong>Use Cases:</strong> Shared storage for EC2, Lambda (VPC), containers
+    </p>
+
+    <h3>Overview</h3>
+    <p>EFS is a fully managed, elastic file system that scales automatically.</p>
+    <ul>
+      <li>POSIX-compliant file system.</li>
+      <li>Multi-AZ by default.</li>
+      <li>Storage classes: Standard, IA, One Zone.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== FSx ===================== -->
+  <article>
+    <h2>Amazon FSx Family</h2>
+    <p>
+      <strong>Type:</strong> High-performance File Systems<br>
+      <strong>Use Cases:</strong> HPC, ML, Windows workloads, enterprise file systems
+    </p>
+
+    <h3>Overview</h3>
+    <p>FSx provides purpose-built, high-performance file systems.</p>
+    <ul>
+      <li>FSx for Windows File Server</li>
+      <li>FSx for Lustre (HPC + S3 integration)</li>
+      <li>FSx for OpenZFS</li>
+      <li>FSx for NetApp ONTAP</li>
+    </ul>
+  </article>
+
+  <!-- ===================== GLACIER ===================== -->
+  <article>
+    <h2>Amazon S3 Glacier</h2>
+    <p>
+      <strong>Type:</strong> Archival Storage<br>
+      <strong>Use Cases:</strong> Compliance, long-term retention
+    </p>
+
+    <h3>Overview</h3>
+    <p>Low-cost archival storage with configurable retrieval times.</p>
+    <ul>
+      <li>Glacier Instant Retrieval</li>
+      <li>Glacier Flexible Retrieval</li>
+      <li>Glacier Deep Archive</li>
+    </ul>
+  </article>
+
+  <!-- ===================== AWS BACKUP ===================== -->
+  <article>
+    <h2>AWS Backup</h2>
+    <p>
+      <strong>Type:</strong> Centralized Backup Management<br>
+      <strong>Use Cases:</strong> Backup automation and compliance
+    </p>
+
+    <h3>Overview</h3>
+    <p>Central service to automate and manage backups across AWS.</p>
+    <ul>
+      <li>Supports EBS, EFS, RDS, DynamoDB, FSx, S3.</li>
+      <li>Cross-account and cross-region support.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== STORAGE GATEWAY ===================== -->
+  <article>
+    <h2>AWS Storage Gateway</h2>
+    <p>
+      <strong>Type:</strong> Hybrid Cloud Storage<br>
+      <strong>Use Cases:</strong> On-premises to AWS integration
+    </p>
+
+    <h3>Overview</h3>
+    <p>Connects on-premises environments to AWS storage.</p>
+    <ul>
+      <li>File Gateway (NFS/SMB → S3)</li>
+      <li>Volume Gateway (cached/stored volumes)</li>
+      <li>Tape Gateway (virtual tape library)</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SNOW FAMILY ===================== -->
+  <article>
+    <h2>AWS Snow Family</h2>
+    <p>
+      <strong>Type:</strong> Offline & Edge Data Transfer<br>
+      <strong>Use Cases:</strong> Large-scale migrations, edge computing
+    </p>
+
+    <h3>Overview</h3>
+    <p>Physical devices for offline data transfer and edge workloads.</p>
+    <ul>
+      <li>Snowcone</li>
+      <li>Snowball Edge</li>
+      <li>Snowmobile (up to 100 PB)</li>
+    </ul>
+  </article>
+
+  <!-- ===================== DATASYNC ===================== -->
+  <article>
+    <h2>AWS DataSync</h2>
+    <p>
+      <strong>Type:</strong> Online Data Transfer<br>
+      <strong>Use Cases:</strong> NFS/SMB migrations, replication
+    </p>
+
+    <h3>Overview</h3>
+    <p>High-speed, automated data transfer service.</p>
+    <ul>
+      <li>On-premises ↔ AWS transfers.</li>
+      <li>AWS storage service to service transfers.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRANSFER FAMILY ===================== -->
+  <article>
+    <h2>AWS Transfer Family</h2>
+    <p>
+      <strong>Type:</strong> Managed File Transfer (SFTP/FTP/FTPS)<br>
+      <strong>Use Cases:</strong> Secure file ingestion to S3/EFS
+    </p>
+
+    <h3>Overview</h3>
+    <p>Fully managed file transfer endpoints.</p>
+    <ul>
+      <li>Supports SFTP, FTP, FTPS.</li>
+      <li>Integrates with IAM, AD, Cognito.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table — AWS Storage Services</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Storage Type</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>S3</td><td>Object</td><td>Data lakes, backups</td></tr>
+        <tr><td>EBS</td><td>Block</td><td>Databases, low-latency apps</td></tr>
+        <tr><td>EFS</td><td>File (NFS)</td><td>Shared Linux workloads</td></tr>
+        <tr><td>FSx</td><td>Specialized File</td><td>HPC, Windows, enterprise</td></tr>
+        <tr><td>Glacier</td><td>Archive</td><td>Long-term retention</td></tr>
+        <tr><td>AWS Backup</td><td>Backup</td><td>Centralized protection</td></tr>
+        <tr><td>Storage Gateway</td><td>Hybrid</td><td>On-prem integration</td></tr>
+        <tr><td>Snow Family</td><td>Offline Transfer</td><td>Massive migrations</td></tr>
+        <tr><td>DataSync</td><td>Online Transfer</td><td>Fast hybrid sync</td></tr>
+        <tr><td>Transfer Family</td><td>Managed FTP</td><td>SFTP/FTPS workloads</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Storage Services — Built by harish 🐰</p>
+</footer>
+
+</body>
+</html>
