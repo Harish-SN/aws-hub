@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS Deployment Methods</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Deployment Methods</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      This guide covers <strong>AWS deployment methods</strong> used for
+      applications, infrastructure, containers, and serverless workloads.
+      These concepts are critical for
+      <strong>Solutions Architect</strong> and
+      <strong>DevOps Professional</strong> exams.
+    </p>
+  </section>
+
+  <!-- ===================== ALL AT ONCE ===================== -->
+  <article>
+    <h2>All-at-Once Deployment</h2>
+    <p><strong>Type:</strong> Basic Deployment Strategy</p>
+
+    <h3>Overview</h3>
+    <p>Deploys the new version to all targets simultaneously.</p>
+    <ul>
+      <li>Fastest deployment</li>
+      <li>High risk of downtime</li>
+      <li>No gradual traffic shifting</li>
+    </ul>
+
+    <p><strong>Used With:</strong> EC2, On-prem servers (CodeDeploy)</p>
+  </article>
+
+  <!-- ===================== ROLLING ===================== -->
+  <article>
+    <h2>Rolling Deployment</h2>
+    <p><strong>Type:</strong> Incremental Deployment</p>
+
+    <h3>Overview</h3>
+    <p>Deploys the application in batches instead of all at once.</p>
+    <ul>
+      <li>Reduced downtime</li>
+      <li>Users may see mixed versions</li>
+      <li>Rollback is slower</li>
+    </ul>
+
+    <p><strong>Used With:</strong> EC2 Auto Scaling, ECS</p>
+  </article>
+
+  <!-- ===================== BLUE GREEN ===================== -->
+  <article>
+    <h2>Blue / Green Deployment</h2>
+    <p><strong>Type:</strong> Zero-Downtime Deployment</p>
+
+    <h3>Overview</h3>
+    <p>
+      Two environments exist:
+      <strong>Blue (current)</strong> and <strong>Green (new)</strong>.
+      Traffic is switched after validation.
+    </p>
+    <ul>
+      <li>Instant rollback</li>
+      <li>No downtime</li>
+      <li>Higher cost (duplicate environments)</li>
+    </ul>
+
+    <p><strong>Used With:</strong> EC2, ECS, Lambda, Elastic Beanstalk</p>
+  </article>
+
+  <!-- ===================== CANARY ===================== -->
+  <article>
+    <h2>Canary Deployment</h2>
+    <p><strong>Type:</strong> Progressive Traffic Shift</p>
+
+    <h3>Overview</h3>
+    <p>Releases the new version to a small percentage of users first.</p>
+    <ul>
+      <li>Early bug detection</li>
+      <li>Very low risk</li>
+      <li>Traffic increases gradually</li>
+    </ul>
+
+    <p><strong>Used With:</strong> Lambda, API Gateway, ECS, ALB</p>
+  </article>
+
+  <!-- ===================== LINEAR ===================== -->
+  <article>
+    <h2>Linear Deployment</h2>
+    <p><strong>Type:</strong> Gradual Deployment</p>
+
+    <h3>Overview</h3>
+    <p>Traffic is shifted in equal increments over time.</p>
+    <ul>
+      <li>Predictable rollout</li>
+      <li>Safer than rolling</li>
+      <li>Slower than canary</li>
+    </ul>
+
+    <p><strong>Used With:</strong> Lambda (CodeDeploy)</p>
+  </article>
+
+  <!-- ===================== A/B ===================== -->
+  <article>
+    <h2>A/B Deployment</h2>
+    <p><strong>Type:</strong> Experiment-Based Deployment</p>
+
+    <h3>Overview</h3>
+    <p>
+      Different user groups receive different versions of the application
+      to compare behavior or performance.
+    </p>
+    <ul>
+      <li>Used for experimentation</li>
+      <li>Business-driven decision making</li>
+      <li>Not purely a release strategy</li>
+    </ul>
+
+    <p><strong>Used With:</strong> CloudFront, ALB, feature flags</p>
+  </article>
+
+  <!-- ===================== SHADOW ===================== -->
+  <article>
+    <h2>Shadow Deployment</h2>
+    <p><strong>Type:</strong> Testing Deployment</p>
+
+    <h3>Overview</h3>
+    <p>
+      Production traffic is duplicated and sent to a new version
+      without impacting users.
+    </p>
+    <ul>
+      <li>No user impact</li>
+      <li>Excellent for performance testing</li>
+      <li>Complex to implement</li>
+    </ul>
+
+    <p><strong>Used With:</strong> ALB, microservices architectures</p>
+  </article>
+
+  <!-- ===================== IMMUTABLE ===================== -->
+  <article>
+    <h2>Immutable Deployment</h2>
+    <p><strong>Type:</strong> Infrastructure Replacement</p>
+
+    <h3>Overview</h3>
+    <p>
+      New infrastructure is created for each release.
+      Old infrastructure is destroyed after success.
+    </p>
+    <ul>
+      <li>No configuration drift</li>
+      <li>Highly reliable</li>
+      <li>Higher infrastructure cost</li>
+    </ul>
+
+    <p><strong>Used With:</strong> EC2 + AMI, Auto Scaling Groups</p>
+  </article>
+
+  <!-- ===================== RECREATE ===================== -->
+  <article>
+    <h2>Recreate Deployment</h2>
+    <p><strong>Type:</strong> Stop & Replace</p>
+
+    <h3>Overview</h3>
+    <p>Old version is stopped before the new version is deployed.</p>
+    <ul>
+      <li>Simple</li>
+      <li>Causes downtime</li>
+      <li>Rarely used in production</li>
+    </ul>
+  </article>
+
+  <!-- ===================== FEATURE FLAGS ===================== -->
+  <article>
+    <h2>Feature Flag / Dark Launch</h2>
+    <p><strong>Type:</strong> Runtime Deployment Control</p>
+
+    <h3>Overview</h3>
+    <p>
+      Code is deployed but features are enabled or disabled at runtime.
+    </p>
+    <ul>
+      <li>No redeployment required</li>
+      <li>Used for gradual rollouts</li>
+      <li>Often combined with canary or A/B</li>
+    </ul>
+
+    <p><strong>Used With:</strong> AppConfig, custom flags</p>
+  </article>
+
+  <!-- ===================== SERVICES ===================== -->
+  <article>
+    <h2>AWS Services Used for Deployment</h2>
+    <ul>
+      <li><strong>AWS CodeDeploy</strong> — EC2, ECS, Lambda deployments</li>
+      <li><strong>AWS Elastic Beanstalk</strong> — Managed application deployments</li>
+      <li><strong>AWS CloudFormation</strong> — Infrastructure deployment</li>
+      <li><strong>AWS CDK</strong> — IaC using programming languages</li>
+      <li><strong>Amazon ECS / EKS</strong> — Container deployments</li>
+      <li><strong>AWS Lambda</strong> — Serverless deployments</li>
+      <li><strong>Amazon Route 53</strong> — DNS-based traffic shifting</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison — AWS Deployment Methods (2025)</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Downtime</th>
+          <th>Risk</th>
+          <th>Rollback</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>All-at-Once</td><td>Yes</td><td>High</td><td>Manual</td></tr>
+        <tr><td>Rolling</td><td>Low</td><td>Medium</td><td>Slow</td></tr>
+        <tr><td>Blue / Green</td><td>No</td><td>Low</td><td>Instant</td></tr>
+        <tr><td>Canary</td><td>No</td><td>Very Low</td><td>Easy</td></tr>
+        <tr><td>Linear</td><td>No</td><td>Low</td><td>Easy</td></tr>
+        <tr><td>A/B</td><td>No</td><td>Low</td><td>Config-based</td></tr>
+        <tr><td>Immutable</td><td>No</td><td>Very Low</td><td>Easy</td></tr>
+        <tr><td>Recreate</td><td>Yes</td><td>High</td><td>Hard</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Deployment Methods — Built by harish 🐰</p>
+</footer>
+
+</body>
+</html>
