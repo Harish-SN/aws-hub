@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Security Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Security Services</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      This list covers <strong>AWS security services</strong> used for
+      <strong>threat detection, vulnerability management, data protection,
+      network defense, identity & access control, compliance, and investigation</strong>.
+    </p>
+  </section>
+
+  <!-- ================= DETECT ================= -->
+
+  <article>
+    <h2>Amazon GuardDuty</h2>
+    <p><strong>Type:</strong> Managed Threat Detection<br>
+       <strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>Detects active attacks and suspicious behavior</li>
+      <li>Analyzes CloudTrail, VPC Flow Logs, DNS logs</li>
+      <li>No agents required</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>Amazon Inspector</h2>
+    <p><strong>Type:</strong> Vulnerability Management<br>
+       <strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>CVE-based scanning for EC2, ECR, Lambda</li>
+      <li>Severity-based findings</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>Amazon Macie</h2>
+    <p><strong>Type:</strong> Sensitive Data Discovery<br>
+       <strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>Detects PII and sensitive data in S3</li>
+      <li>ML-powered classification</li>
+    </ul>
+  </article>
+
+  <!-- ================= GOVERN ================= -->
+
+  <article>
+    <h2>AWS Security Hub</h2>
+    <p><strong>Type:</strong> Security Posture Management<br>
+       <strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>Aggregates findings from GuardDuty, Inspector, Macie</li>
+      <li>Maps to CIS, PCI DSS, and other standards</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS Config</h2>
+    <p><strong>Type:</strong> Configuration Compliance<br>
+       <strong>Operation:</strong> Automatic (rule-based)</p>
+    <ul>
+      <li>Tracks resource configuration changes</li>
+      <li>Detects compliance drift</li>
+    </ul>
+  </article>
+
+  <!-- ================= INVESTIGATE ================= -->
+
+  <article>
+    <h2>Amazon Detective</h2>
+    <p><strong>Type:</strong> Security Investigation<br>
+       <strong>Operation:</strong> Manual (analyst-driven)</p>
+    <ul>
+      <li>Investigates GuardDuty findings</li>
+      <li>Graph-based visualization</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS CloudTrail</h2>
+    <p><strong>Type:</strong> API Auditing & Governance<br>
+       <strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>Records all AWS API calls</li>
+      <li>Foundation for security forensics</li>
+    </ul>
+  </article>
+
+  <!-- ================= PREVENT ================= -->
+
+  <article>
+    <h2>AWS IAM & Access Analyzer</h2>
+    <p><strong>Type:</strong> Identity & Access Security<br>
+       <strong>Operation:</strong> Policy-driven</p>
+    <ul>
+      <li>Controls authentication & authorization</li>
+      <li>Detects public or cross-account access</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS WAF</h2>
+    <p><strong>Type:</strong> Web Application Firewall<br>
+       <strong>Operation:</strong> Policy-driven</p>
+    <ul>
+      <li>Blocks SQLi, XSS, bots</li>
+      <li>Works with CloudFront, ALB, API Gateway</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS Shield</h2>
+    <p><strong>Type:</strong> DDoS Protection<br>
+       <strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>Shield Standard (free, always on)</li>
+      <li>Shield Advanced (enhanced protection)</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS Network Firewall</h2>
+    <p><strong>Type:</strong> Stateful VPC Firewall<br>
+       <strong>Operation:</strong> Policy-driven</p>
+    <ul>
+      <li>Deployed inside VPC subnets</li>
+      <li>Deep packet inspection</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS Firewall Manager</h2>
+    <p><strong>Type:</strong> Central Policy Management<br>
+       <strong>Operation:</strong> Policy-driven</p>
+    <ul>
+      <li>Org-wide WAF, Shield, SG policies</li>
+      <li>Requires AWS Organizations</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS KMS & Certificate Services</h2>
+    <p><strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li><strong>KMS:</strong> Encryption key management</li>
+      <li><strong>ACM:</strong> Managed TLS certificates</li>
+      <li><strong>Private CA:</strong> Managed PKI</li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>AWS Secrets Manager & Parameter Store</h2>
+    <p><strong>Operation:</strong> Automatic</p>
+    <ul>
+      <li>Secure storage of secrets</li>
+      <li>Automatic rotation support</li>
+    </ul>
+  </article>
+
+  <!-- ================= FINAL TABLE ================= -->
+
+  <section>
+    <h2>📊 AWS Security Services — Operation Model</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Operation Type</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>GuardDuty</td><td>Automatic</td><td>Threat detection</td></tr>
+        <tr><td>Inspector</td><td>Automatic</td><td>CVE scanning</td></tr>
+        <tr><td>Macie</td><td>Automatic</td><td>PII detection</td></tr>
+        <tr><td>Security Hub</td><td>Automatic</td><td>Aggregation only</td></tr>
+        <tr><td>Detective</td><td>Manual</td><td>Human investigation</td></tr>
+        <tr><td>CloudTrail</td><td>Automatic</td><td>API audit logs</td></tr>
+        <tr><td>Config</td><td>Automatic</td><td>Compliance tracking</td></tr>
+        <tr><td>IAM</td><td>Policy-driven</td><td>Access control</td></tr>
+        <tr><td>WAF</td><td>Policy-driven</td><td>L7 firewall</td></tr>
+        <tr><td>Shield</td><td>Automatic</td><td>DDoS protection</td></tr>
+        <tr><td>Network Firewall</td><td>Policy-driven</td><td>VPC deployed</td></tr>
+        <tr><td>KMS</td><td>Automatic</td><td>Key management</td></tr>
+        <tr><td>Secrets Manager</td><td>Automatic</td><td>Secret rotation</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Security Services — Built by harish 🐰</p>
+</footer>
+
+</body>
+</html>
