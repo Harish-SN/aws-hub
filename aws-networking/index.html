@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Networking Services — Complete Revision (2025)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Networking Services — Complete Revision (2025)</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      This 2025 edition covers <strong>active AWS networking, routing, connectivity,
+      and global acceleration services</strong> used for secure, scalable,
+      and hybrid cloud architectures.
+    </p>
+  </section>
+
+  <!-- ===================== VPC ===================== -->
+  <article>
+    <h2>Amazon VPC (Virtual Private Cloud)</h2>
+    <p><strong>Type:</strong> Isolated Virtual Network<br>
+       <strong>Use Cases:</strong> Custom IP ranges, subnets, routing, security</p>
+
+    <ul>
+      <li>Configurable IPv4 / IPv6 CIDR blocks.</li>
+      <li>Public and private subnets.</li>
+      <li>Security Groups and Network ACLs.</li>
+      <li>Subnet-level route tables.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SUBNETS ===================== -->
+  <article>
+    <h2>Subnets</h2>
+    <p><strong>Type:</strong> Network Segmentation<br>
+       <strong>Use Cases:</strong> Public vs private workloads</p>
+
+    <ul>
+      <li>Each subnet is scoped to a single Availability Zone.</li>
+      <li>High availability is achieved using multiple subnets across AZs.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== ROUTE TABLES ===================== -->
+  <article>
+    <h2>Route Tables</h2>
+    <p><strong>Type:</strong> Traffic Routing</p>
+
+    <ul>
+      <li>Local VPC routing by default.</li>
+      <li>Routes to IGW, NAT Gateway, TGW, VPN, Peering.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== IGW ===================== -->
+  <article>
+    <h2>Internet Gateway (IGW)</h2>
+    <p><strong>Type:</strong> Internet Access</p>
+
+    <ul>
+      <li>Enables inbound and outbound internet connectivity.</li>
+      <li>Attached at the VPC level.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== NAT ===================== -->
+  <article>
+    <h2>NAT Gateway</h2>
+    <p><strong>Type:</strong> Outbound Internet for Private Subnets</p>
+
+    <ul>
+      <li>Allows outbound-only internet access.</li>
+      <li>Managed, highly available, and scalable.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== VPC PEERING ===================== -->
+  <article>
+    <h2>VPC Peering</h2>
+    <p><strong>Type:</strong> VPC-to-VPC Connectivity</p>
+
+    <ul>
+      <li>Private connectivity over AWS backbone.</li>
+      <li>No transitive routing.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRANSIT GATEWAY ===================== -->
+  <article>
+    <h2>Transit Gateway</h2>
+    <p><strong>Type:</strong> Enterprise Network Hub</p>
+
+    <ul>
+      <li>Hub-and-spoke architecture.</li>
+      <li>Supports transitive routing.</li>
+      <li>Integrates VPN and Direct Connect.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== VPC ENDPOINTS ===================== -->
+  <article>
+    <h2>VPC Endpoints</h2>
+    <p><strong>Type:</strong> Private AWS Service Access</p>
+
+    <ul>
+      <li><strong>Gateway endpoints:</strong> S3, DynamoDB.</li>
+      <li><strong>Interface endpoints:</strong> ENI-based access to most AWS services.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== PRIVATELINK ===================== -->
+  <article>
+    <h2>AWS PrivateLink</h2>
+    <p><strong>Type:</strong> Private Service Exposure</p>
+
+    <ul>
+      <li>Expose services privately across VPCs and accounts.</li>
+      <li>No public internet exposure.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== ROUTE 53 ===================== -->
+  <article>
+    <h2>Amazon Route 53</h2>
+    <p><strong>Type:</strong> DNS & Global Routing</p>
+
+    <ul>
+      <li>Latency, weighted, geolocation routing.</li>
+      <li>Health checks and failover.</li>
+      <li>DNSSEC support.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CLOUDFRONT ===================== -->
+  <article>
+    <h2>Amazon CloudFront</h2>
+    <p><strong>Type:</strong> Content Delivery Network (CDN)</p>
+
+    <ul>
+      <li>Global edge caching.</li>
+      <li>Integrated with Shield and WAF.</li>
+      <li>Supports signed URLs and cookies.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== GLOBAL ACCELERATOR ===================== -->
+  <article>
+    <h2>AWS Global Accelerator</h2>
+    <p><strong>Type:</strong> Network Traffic Accelerator</p>
+
+    <ul>
+      <li>Anycast static IP addresses.</li>
+      <li>Improves TCP and UDP performance.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== API GATEWAY ===================== -->
+  <article>
+    <h2>Amazon API Gateway</h2>
+    <p><strong>Type:</strong> Managed API Layer</p>
+
+    <ul>
+      <li>Supports REST APIs, HTTP APIs, and WebSockets.</li>
+      <li>Private APIs via VPC endpoints.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== DIRECT CONNECT ===================== -->
+  <article>
+    <h2>AWS Direct Connect</h2>
+    <p><strong>Type:</strong> Dedicated Hybrid Connectivity</p>
+
+    <ul>
+      <li>Private fiber connection.</li>
+      <li>Consistent and predictable latency.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== VPN ===================== -->
+  <article>
+    <h2>AWS Site-to-Site VPN</h2>
+    <p><strong>Type:</strong> IPSec VPN</p>
+
+    <ul>
+      <li>Encrypted tunnels over internet.</li>
+      <li>BGP routing support.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== LOAD BALANCERS ===================== -->
+  <article>
+    <h2>Elastic Load Balancing (ELB)</h2>
+    <ul>
+      <li><strong>ALB:</strong> Layer 7 HTTP/HTTPS routing.</li>
+      <li><strong>NLB:</strong> Layer 4, ultra-high throughput.</li>
+      <li><strong>GWLB:</strong> Third-party firewall appliances.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== NETWORK FIREWALL ===================== -->
+  <article>
+    <h2>AWS Network Firewall</h2>
+    <p><strong>Type:</strong> Managed Network Security</p>
+
+    <ul>
+      <li>Stateful and stateless filtering.</li>
+      <li>Suricata-compatible rules.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 AWS Networking Services — Comparison</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Best For</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>VPC</td><td>Networking</td><td>Private networks</td><td>Foundation</td></tr>
+        <tr><td>Subnets</td><td>Segmentation</td><td>AZ isolation</td><td>AZ-scoped</td></tr>
+        <tr><td>NAT Gateway</td><td>Outbound</td><td>Private internet access</td><td>No inbound</td></tr>
+        <tr><td>Transit Gateway</td><td>Routing</td><td>Multi-VPC</td><td>Transitive routing</td></tr>
+        <tr><td>PrivateLink</td><td>Private Access</td><td>SaaS & internal services</td><td>No public IPs</td></tr>
+        <tr><td>Route 53</td><td>DNS</td><td>Global routing</td><td>Health checks</td></tr>
+        <tr><td>CloudFront</td><td>CDN</td><td>Low latency delivery</td><td>Edge caching</td></tr>
+        <tr><td>Global Accelerator</td><td>Acceleration</td><td>TCP/UDP apps</td><td>Anycast IPs</td></tr>
+        <tr><td>Direct Connect</td><td>Hybrid</td><td>Private connectivity</td><td>Stable latency</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Networking Services — Built by FlyingBunny 🐰 (2025)</p>
+</footer>
+
+</body>
+</html>

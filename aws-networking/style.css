@@ -1,0 +1,113 @@
+/* ======== Global Dark Theme ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* ======== Header ======== */
+header {
+  text-align: center;
+  padding: 40px 10px;
+  background: linear-gradient(135deg, #141a22, #1c2635);
+  border-bottom: 1px solid #30363d;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #58a6ff;
+}
+
+/* ======== Container ======== */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* ======== Section Styling ======== */
+article, section {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+article:hover, section:hover {
+  border-color: #58a6ff;
+  box-shadow: 0 0 12px rgba(88,166,255,0.3);
+  transform: translateY(-2px);
+}
+
+/* ======== Headings ======== */
+h2 {
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #c9d1d9;
+  margin-top: 15px;
+}
+
+/* ======== Lists & Text ======== */
+ul {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+strong {
+  color: #79c0ff;
+}
+
+p {
+  margin-top: 8px;
+}
+
+/* ======== Comparison Table ======== */
+table.compare {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+table.compare th,
+table.compare td {
+  padding: 12px;
+  border: 1px solid #30363d;
+  text-align: left;
+}
+
+table.compare thead {
+  background: #21262d;
+}
+
+table.compare tbody tr:nth-child(even) {
+  background: #151b23;
+}
+
+table.compare tbody tr:hover {
+  background: #1e2633;
+}
+
+/* ======== Footer ======== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  background: #141a21;
+  border-top: 1px solid #30363d;
+  color: #8b949e;
+}
