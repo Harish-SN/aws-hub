@@ -1,4 +1,4 @@
-/* ======== Global Dark Theme ======== */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,6 @@ body {
   padding-bottom: 50px;
 }
 
-/* ======== Header ======== */
 header {
   text-align: center;
   padding: 40px 10px;
@@ -27,14 +26,12 @@ header h1 {
   color: #58a6ff;
 }
 
-/* ======== Container ======== */
 .container {
   width: 90%;
   max-width: 1000px;
   margin: 40px auto;
 }
 
-/* ======== Section Styling ======== */
 article, section {
   background: #161b22;
   border: 1px solid #30363d;
@@ -50,7 +47,6 @@ article:hover, section:hover {
   transform: translateY(-2px);
 }
 
-/* ======== Headings ======== */
 h2 {
   color: #58a6ff;
   margin-bottom: 10px;
@@ -61,7 +57,6 @@ h3 {
   margin-top: 15px;
 }
 
-/* ======== Lists & Text ======== */
 ul {
   margin-left: 20px;
   margin-top: 10px;
@@ -75,7 +70,6 @@ p {
   margin-top: 8px;
 }
 
-/* ======== Comparison Table ======== */
 table.compare {
   width: 100%;
   margin-top: 15px;
@@ -102,7 +96,6 @@ table.compare tbody tr:hover {
   background: #1e2633;
 }
 
-/* ======== Footer ======== */
 footer {
   text-align: center;
   padding: 30px 0;
