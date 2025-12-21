@@ -1,6 +1,4 @@
-/* ===========================
-   GLOBAL DARK THEME
-=========================== */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -17,9 +15,6 @@ body {
   padding: 20px 0;
 }
 
-/* ===========================
-   HEADER
-=========================== */
 header {
   background: #111827;
   color: #ffffff;
@@ -35,9 +30,6 @@ h1 {
   color: #60a5fa;
 }
 
-/* ===========================
-   INTRO SECTION
-=========================== */
 .intro p {
   background: #1e293b;
   padding: 15px;
@@ -46,9 +38,6 @@ h1 {
   color: #cbd5e1;
 }
 
-/* ===========================
-   ARTICLE CARDS
-=========================== */
 article {
   background: #111827;
   margin: 22px 0;
@@ -72,9 +61,6 @@ h3 {
   color: #f1f5f9;
 }
 
-/* ===========================
-   LISTS
-=========================== */
 ul {
   margin-top: 10px;
   padding-left: 20px;
@@ -85,9 +71,6 @@ ul li {
   margin-bottom: 6px;
 }
 
-/* ===========================
-   COMPARISON TABLE
-=========================== */
 .compare {
   width: 100%;
   border-collapse: collapse;
@@ -121,9 +104,6 @@ ul li {
   transition: 0.2s ease;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
 footer {
   text-align: center;
   padding: 20px 0;
