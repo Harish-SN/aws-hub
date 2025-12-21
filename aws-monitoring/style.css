@@ -1,6 +1,4 @@
-/* ===============================
-   GLOBAL RESET & BASE
-================================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +21,6 @@
   --border: #1f2937;
 }
 
-/* ===============================
-   BODY & LAYOUT
-================================ */
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-main);
@@ -53,9 +48,6 @@ header h1 {
   padding: 2.5rem 1rem 4rem;
 }
 
-/* ===============================
-   INTRO SECTION
-================================ */
 .intro {
   margin-bottom: 2.5rem;
 }
@@ -65,9 +57,6 @@ header h1 {
   font-size: 1.05rem;
 }
 
-/* ===============================
-   ARTICLES / CARDS
-================================ */
 article {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
@@ -110,9 +99,6 @@ article li {
   color: var(--text-muted);
 }
 
-/* ===============================
-   TABLES
-================================ */
 section h2 {
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -160,9 +146,6 @@ table.compare tr:last-child td {
   border-bottom: none;
 }
 
-/* ===============================
-   FOOTER
-================================ */
 footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem 1rem;
@@ -175,9 +158,6 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* ===============================
-   CODE / INLINE
-================================ */
 code {
   background-color: #020617;
   color: var(--accent);
@@ -186,9 +166,6 @@ code {
   font-size: 0.9rem;
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.6rem;
