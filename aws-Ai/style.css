@@ -1,0 +1,152 @@
+/* ===========================
+   GLOBAL DARK THEME
+   =========================== */
+
+:root {
+  --bg: #050607;
+  --panel: #0c0f13;
+  --text: #e7ecf2;
+  --muted: #9aa6b2;
+  --accent: #4ee1a1;
+  --accent2: #6cc5ff;
+  --card-border: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  padding-bottom: 60px;
+}
+
+header {
+  padding: 25px 10px;
+  text-align: center;
+  background: linear-gradient(135deg, #0b0f12, #111820);
+  border-bottom: 1px solid var(--card-border);
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(78, 225, 161, 0.4);
+}
+
+/* ===========================
+   CONTAINER
+   =========================== */
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 25px auto;
+}
+
+/* ===========================
+   INTRO SECTION
+   =========================== */
+
+.intro {
+  padding: 18px 22px;
+  background: var(--panel);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+/* ===========================
+   ALL SERVICE CARDS (ARTICLE)
+   =========================== */
+
+article {
+  padding: 20px 24px;
+  background: var(--panel);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  margin-bottom: 26px;
+  transition: 0.25s ease;
+}
+
+article:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(78, 225, 161, 0.18);
+}
+
+article h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--accent2);
+  text-shadow: 0 0 10px rgba(108, 197, 255, 0.25);
+}
+
+article h3 {
+  font-size: 17px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+article p, article li {
+  color: var(--text);
+}
+
+ul {
+  margin-left: 18px;
+  padding-left: 5px;
+}
+
+/* ===========================
+   COMPARISON TABLE
+   =========================== */
+
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.compare thead {
+  background: #11161d;
+}
+
+.compare thead th {
+  padding: 12px 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  font-size: 13px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.compare tbody td {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.compare tbody tr:hover {
+  background: rgba(78, 225, 161, 0.08);
+}
+
+.compare tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}

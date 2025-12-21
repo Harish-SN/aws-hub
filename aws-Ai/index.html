@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS AI & ML Services — Complete Revision (2025)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS AI & Machine Learning Services — Complete Revision (2025)</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>This 2025 edition covers AWS’s <strong>AI/ML services</strong> including model training, data preparation, inference, natural language processing, computer vision, and MLOps workflows.</p>
+  </section>
+
+  <!-- ===================== BEDROCK ===================== -->
+  <article>
+    <h2>Amazon Bedrock</h2>
+    <p><strong>Type:</strong> Foundation Model Platform (GenAI)<br>
+       <strong>Use Cases:</strong> Chatbots, summarization, RAG, agent automation</p>
+
+    <h3>Overview</h3>
+    <p>Bedrock provides access to foundation models from AWS, Anthropic, Meta, Mistral, Cohere, Stability, and more.</p>
+    <ul>
+      <li>Model inference API for text, image, embeddings.</li>
+      <li>Bedrock Agents for automation workflows.</li>
+      <li>Knowledge Bases with vector search.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SAGEMAKER ===================== -->
+  <article>
+    <h2>Amazon SageMaker</h2>
+    <p><strong>Type:</strong> Full ML Development Platform<br>
+       <strong>Use Cases:</strong> Train, tune, deploy, MLOps pipelines</p>
+
+    <h3>Overview</h3>
+    <p>SageMaker is the most powerful managed ML platform on AWS.</p>
+    <ul>
+      <li>Notebook Instances & Studio IDE.</li>
+      <li>Training jobs with distributed training.</li>
+      <li>Real-time, Batch, and Serverless endpoints.</li>
+      <li>Automatic Model Tuning (HPO).</li>
+    </ul>
+
+    <h3>Key MLOps Components</h3>
+    <ul>
+      <li><strong>Feature Store:</strong> Centralized features for ML apps.</li>
+      <li><strong>Pipelines:</strong> CI/CD automation for ML.</li>
+      <li><strong>Clarify:</strong> Bias & explainability.</li>
+      <li><strong>Canvas:</strong> No-code ML tool.</li>
+      <li><strong>Data Wrangler:</strong> ML data prep tool.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPREHEND ===================== -->
+  <article>
+    <h2>Amazon Comprehend</h2>
+    <p><strong>Type:</strong> NLP Service<br>
+       <strong>Use Cases:</strong> Sentiment, entity extraction, PII, topic modeling</p>
+
+    <h3>Overview</h3>
+    <p>Comprehend uses NLP to analyze and extract insights from text.</p>
+    <ul>
+      <li>Sentiment analysis.</li>
+      <li>Entity recognition (names, places, dates).</li>
+      <li>PII detection.</li>
+      <li>Custom classifiers.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== REKOGNITION ===================== -->
+  <article>
+    <h2>Amazon Rekognition</h2>
+    <p><strong>Type:</strong> Computer Vision<br>
+       <strong>Use Cases:</strong> Face detection, object detection, moderation</p>
+
+    <h3>Overview</h3>
+    <p>Rekognition provides image & video analysis APIs.</p>
+    <ul>
+      <li>Face recognition & comparison.</li>
+      <li>Label/object detection.</li>
+      <li>Content moderation.</li>
+      <li>Celebrity recognition.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TEXTRACT ===================== -->
+  <article>
+    <h2>Amazon Textract</h2>
+    <p><strong>Type:</strong> Document AI (OCR)<br>
+       <strong>Use Cases:</strong> PDF extraction, invoices, forms</p>
+
+    <h3>Overview</h3>
+    <p>Textract extracts structured data from scanned documents.</p>
+    <ul>
+      <li>OCR text extraction.</li>
+      <li>Form fields (key-value pairs).</li>
+      <li>Tables from documents.</li>
+      <li>Analyzes invoices and receipts.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRANSCRIBE ===================== -->
+  <article>
+    <h2>Amazon Transcribe</h2>
+    <p><strong>Type:</strong> Speech-to-Text<br>
+       <strong>Use Cases:</strong> Call centers, subtitles, audio analysis</p>
+
+    <h3>Overview</h3>
+    <p>Transcribe converts speech into accurate text.</p>
+    <ul>
+      <li>Real-time and batch transcription.</li>
+      <li>Custom vocabulary.</li>
+      <li>Speaker identification.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== POLLY ===================== -->
+  <article>
+    <h2>Amazon Polly</h2>
+    <p><strong>Type:</strong> Text-to-Speech<br>
+       <strong>Use Cases:</strong> Voice apps, narrators, alerts</p>
+
+    <h3>Overview</h3>
+    <p>Polly converts text into human-like speech.</p>
+    <ul>
+      <li>Neural TTS voices.</li>
+      <li>Speech marks for animations.</li>
+      <li>Supports Lexicons & SSML for pronunciation and speech styling.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRANSLATE ===================== -->
+  <article>
+    <h2>Amazon Translate</h2>
+    <p><strong>Type:</strong> Neural Machine Translation<br>
+       <strong>Use Cases:</strong> Localization, multi-language apps</p>
+
+    <h3>Overview</h3>
+    <p>Translate converts text across many supported languages using neural networks.</p>
+    <ul>
+      <li>Real-time & batch translation.</li>
+      <li>Custom terminology support to preserve domain-specific terms.</li>
+      <li>Can be integrated with API Gateway, Lambda, S3 for translation pipelines.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== LEX ===================== -->
+  <article>
+    <h2>Amazon Lex</h2>
+    <p><strong>Type:</strong> Conversational AI<br>
+       <strong>Use Cases:</strong> Chatbots, virtual assistants</p>
+
+    <h3>Overview</h3>
+    <p>Lex builds conversational interfaces using ASR + NLU.</p>
+    <ul>
+      <li>Powered by same tech as Alexa.</li>
+      <li>Multi-turn conversations.</li>
+      <li>Integrates with Lambda, Polly and Connect for IVR/chatbots.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== KENDRA ===================== -->
+  <article>
+    <h2>Amazon Kendra</h2>
+    <p><strong>Type:</strong> Enterprise Search (AI Search)<br>
+       <strong>Use Cases:</strong> Knowledge base search</p>
+
+    <h3>Overview</h3>
+    <p>Kendra provides intelligent search across enterprise documents.</p>
+    <ul>
+      <li>Semantic search.</li>
+      <li>Connectors for S3, SharePoint, Google Drive.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CONNECT (ADDED) ===================== -->
+  <article>
+    <h2>Amazon Connect</h2>
+    <p><strong>Type:</strong> Cloud Contact Center (CCaaS)<br>
+       <strong>Use Cases:</strong> Customer support, IVR, omnichannel contact flows</p>
+
+    <h3>Overview</h3>
+    <p>Amazon Connect is a managed cloud contact center service that powers voice and chat customer interactions and integrates tightly with AWS AI/ML services.</p>
+    <ul>
+      <li>Out-of-the-box contact flows, IVR, routing, and real-time metrics.</li>
+      <li>Integrates with Amazon Lex for conversational IVR and with Polly for TTS prompts.</li>
+      <li>Uses Amazon Transcribe and Contact Lens for real-time transcription, sentiment analysis, and post-call analytics.</li>
+      <li>Can stream call audio to Kinesis/S3 for analytics and to SageMaker or Comprehend for custom ML models.</li>
+      <li>Use cases: call center automation, chatbots, real-time agent assist, post-call quality analytics.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== PERSONALIZE ===================== -->
+  <article>
+    <h2>Amazon Personalize</h2>
+    <p><strong>Type:</strong> Recommendation Engine<br>
+       <strong>Use Cases:</strong> Product, content, ranking recommendations</p>
+
+    <h3>Overview</h3>
+    <p>Personalize powers recommendation systems without ML expertise.</p>
+    <ul>
+      <li>Real-time recommendations.</li>
+      <li>User personalization.</li>
+      <li>Behavioral ranking.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== FORECAST ===================== -->
+  <article>
+    <h2>Amazon Forecast</h2>
+    <p><strong>Type:</strong> Time-Series Forecasting<br>
+       <strong>Use Cases:</strong> Sales, demand, revenue forecasting</p>
+
+    <h3>Overview</h3>
+    <p>Forecast uses ML to predict future trends based on historical data.</p>
+    <ul>
+      <li>Demand forecasting.</li>
+      <li>Supply chain planning.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== FRAUD DETECTOR ===================== -->
+  <article>
+    <h2>Amazon Fraud Detector</h2>
+    <p><strong>Type:</strong> Fraud Detection ML<br>
+       <strong>Use Cases:</strong> Transaction fraud, account takeovers</p>
+
+    <h3>Overview</h3>
+    <p>Detects fraudulent activities using ML models.</p>
+    <ul>
+      <li>Real-time predictions.</li>
+      <li>Low-code rule engine.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table — AI/ML Services (2025)</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Best For</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bedrock</td><td>Generative AI</td><td>LLMs, agents, embeddings</td><td>Inference</td></tr>
+        <tr><td>SageMaker</td><td>ML Platform</td><td>Training & MLOps</td><td>Train + Deploy</td></tr>
+        <tr><td>Comprehend</td><td>NLP</td><td>Sentiment, PII</td><td>Text</td></tr>
+        <tr><td>Rekognition</td><td>Vision</td><td>Object/Face detection</td><td>Image/Video</td></tr>
+        <tr><td>Textract</td><td>Document AI</td><td>OCR & forms</td><td>Text Extraction</td></tr>
+        <tr><td>Transcribe</td><td>Speech</td><td>Speech-to-text</td><td>Audio</td></tr>
+        <tr><td>Polly</td><td>Speech</td><td>Text-to-speech</td><td>Audio</td></tr>
+        <tr><td>Translate</td><td>Translation</td><td>Localization, real-time translation</td><td>Text Translation</td></tr>
+        <tr><td>Lex</td><td>Chatbots</td><td>Conversational AI</td><td>NLU/ASR</td></tr>
+        <tr><td>Connect</td><td>Contact Center</td><td>IVR, agent assist, real-time call analytics</td><td>CCaaS</td></tr>
+        <tr><td>Personalize</td><td>Recommendations</td><td>Ranking, user models</td><td>Inference</td></tr>
+        <tr><td>Forecast</td><td>Time-Series</td><td>Demand prediction</td><td>Forecasting</td></tr>
+        <tr><td>Kendra</td><td>Enterprise Search</td><td>Knowledge search</td><td>Semantic Search</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS AI & ML Tools — Built by FlyingBunny 🐰 (2025)</p>
+</footer>
+
+</body>
+</html>
