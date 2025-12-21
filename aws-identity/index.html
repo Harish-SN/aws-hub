@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Identity & Federation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Identity & Federation Services</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      Covers AWS services responsible for
+      <strong>identity management, authentication, authorization, SSO,
+      federation, governance, and multi-account access control</strong>.
+    </p>
+  </section>
+
+  <!-- ===================== IAM ===================== -->
+  <article>
+    <h2>AWS IAM (Identity & Access Management)</h2>
+    <p>
+      <strong>Type:</strong> Identity & Permission Management<br>
+      <strong>Serverless:</strong> ✅<br>
+      <strong>Use Cases:</strong> Users, roles, permissions, policies
+    </p>
+
+    <h3>Overview</h3>
+    <p>IAM controls who can access AWS resources and what actions they can perform.</p>
+    <ul>
+      <li>Users, Groups, Roles, and JSON-based policies.</li>
+      <li>IAM Roles for EC2, Lambda, ECS tasks, and services.</li>
+      <li>Least-privilege access enforcement.</li>
+      <li>MFA, password policies, and credential reports.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== IAM IDENTITY CENTER ===================== -->
+  <article>
+    <h2>AWS IAM Identity Center (formerly AWS SSO)</h2>
+    <p>
+      <strong>Type:</strong> Central SSO & Workforce Identity<br>
+      <strong>Serverless:</strong> ✅<br>
+      <strong>Use Cases:</strong> SSO for AWS accounts and applications
+    </p>
+
+    <h3>Overview</h3>
+    <p>Provides centralized workforce authentication and authorization.</p>
+    <ul>
+      <li>SSO for AWS Console and CLI.</li>
+      <li>Permission sets mapped to AWS accounts.</li>
+      <li>Integrates with AWS Organizations.</li>
+      <li>External IdP support (Azure AD, Okta, Google Workspace).</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COGNITO ===================== -->
+  <article>
+    <h2>Amazon Cognito</h2>
+    <p>
+      <strong>Type:</strong> Application User Authentication<br>
+      <strong>Serverless:</strong> ✅<br>
+      <strong>Use Cases:</strong> App sign-up, login, federation
+    </p>
+
+    <h3>Overview</h3>
+    <p>Cognito handles authentication and identity federation for applications.</p>
+    <ul>
+      <li>User Pools → authentication (OAuth2, OIDC, JWT).</li>
+      <li>Identity Pools → AWS credential federation.</li>
+      <li>Supports SAML, Google, Facebook, Apple.</li>
+      <li>MFA, hosted UI, and custom auth flows.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== STS ===================== -->
+  <article>
+    <h2>AWS STS (Security Token Service)</h2>
+    <p>
+      <strong>Type:</strong> Temporary Credential Service<br>
+      <strong>Serverless:</strong> ✅<br>
+      <strong>Use Cases:</strong> Federation, AssumeRole, cross-account access
+    </p>
+
+    <h3>Overview</h3>
+    <p>STS issues short-lived AWS credentials.</p>
+    <ul>
+      <li>AssumeRole for cross-account access.</li>
+      <li>AssumeRoleWithSAML / AssumeRoleWithWebIdentity.</li>
+      <li>Core building block for Cognito and Identity Center.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== ORGANIZATIONS ===================== -->
+  <article>
+    <h2>AWS Organizations</h2>
+    <p>
+      <strong>Type:</strong> Multi-account Governance<br>
+      <strong>Serverless:</strong> ✅<br>
+      <strong>Use Cases:</strong> SCPs, account structure, consolidated billing
+    </p>
+
+    <h3>Overview</h3>
+    <p>Organizations centrally manages and governs AWS accounts.</p>
+    <ul>
+      <li>Service Control Policies (SCPs).</li>
+      <li>Consolidated billing and budgets.</li>
+      <li>Foundation for Control Tower and Identity Center.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== DIRECTORY SERVICE ===================== -->
+  <article>
+    <h2>AWS Directory Service</h2>
+    <p>
+      <strong>Type:</strong> Managed Active Directory<br>
+      <strong>Serverless:</strong> N/A<br>
+      <strong>Use Cases:</strong> Microsoft AD workloads
+    </p>
+
+    <h3>Overview</h3>
+    <p>Provides managed Microsoft Active Directory in AWS.</p>
+    <ul>
+      <li>AWS Managed Microsoft AD.</li>
+      <li>AD Connector for on-prem directories.</li>
+      <li>Used with WorkSpaces, RDS SQL Server, FSx.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== RAM ===================== -->
+  <article>
+    <h2>AWS RAM (Resource Access Manager)</h2>
+    <p>
+      <strong>Type:</strong> Resource Sharing<br>
+      <strong>Serverless:</strong> N/A<br>
+      <strong>Use Cases:</strong> Share AWS resources across accounts
+    </p>
+
+    <h3>Overview</h3>
+    <p>Securely shares AWS resources between accounts.</p>
+    <ul>
+      <li>Share VPC subnets.</li>
+      <li>Share Transit Gateways.</li>
+      <li>Share Route 53 Resolver rules.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CONTROL TOWER ===================== -->
+  <article>
+    <h2>AWS Control Tower</h2>
+    <p>
+      <strong>Type:</strong> Landing Zone Automation<br>
+      <strong>Serverless:</strong> N/A<br>
+      <strong>Use Cases:</strong> Multi-account governance
+    </p>
+
+    <h3>Overview</h3>
+    <p>Automates enterprise-grade AWS landing zones.</p>
+    <ul>
+      <li>Automated account provisioning.</li>
+      <li>Guardrails using SCPs.</li>
+      <li>Built on Organizations and Identity Center.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== ROLES ANYWHERE ===================== -->
+  <article>
+    <h2>IAM Roles Anywhere</h2>
+    <p>
+      <strong>Type:</strong> External Identity Access<br>
+      <strong>Serverless:</strong> N/A<br>
+      <strong>Use Cases:</strong> On-prem and external workloads
+    </p>
+
+    <h3>Overview</h3>
+    <p>Provides AWS access using X.509 certificates instead of access keys.</p>
+    <ul>
+      <li>Ideal for on-prem servers and CI/CD systems.</li>
+      <li>Uses temporary credentials via STS.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== IDENTITY STORE ===================== -->
+  <article>
+    <h2>AWS Identity Store</h2>
+    <p>
+      <strong>Type:</strong> User & Group Directory<br>
+      <strong>Serverless:</strong> N/A<br>
+      <strong>Use Cases:</strong> IAM Identity Center identities
+    </p>
+
+    <h3>Overview</h3>
+    <p>The internal user and group directory used by IAM Identity Center.</p>
+    <ul>
+      <li>Stores workforce users and groups.</li>
+      <li>Supports SCIM sync from external IdPs.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table — Identity & Federation</h2>
+
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Serverless</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>IAM</td><td>Permissions</td><td>✅</td><td>Users & roles</td></tr>
+        <tr><td>IAM Identity Center</td><td>SSO</td><td>✅</td><td>Workforce access</td></tr>
+        <tr><td>Cognito</td><td>App Auth</td><td>✅</td><td>User sign-in</td></tr>
+        <tr><td>STS</td><td>Token Service</td><td>✅</td><td>Temp credentials</td></tr>
+        <tr><td>Organizations</td><td>Governance</td><td>✅</td><td>Multi-account mgmt</td></tr>
+        <tr><td>Directory Service</td><td>Enterprise Identity</td><td>N/A</td><td>Microsoft AD</td></tr>
+        <tr><td>RAM</td><td>Sharing</td><td>N/A</td><td>Resource sharing</td></tr>
+        <tr><td>Control Tower</td><td>Landing Zone</td><td>N/A</td><td>Account automation</td></tr>
+        <tr><td>Roles Anywhere</td><td>External Identity</td><td>N/A</td><td>On-prem access</td></tr>
+        <tr><td>Identity Store</td><td>Directory</td><td>N/A</td><td>SSO users</td></tr>
+      </tbody>
+    </table>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Identity & Federation — Built by Harish</p>
+</footer>
+
+</body>
+</html>
