@@ -133,6 +133,7 @@ ul li::marker {
   color: #e5e7eb;
 }
 
+
 .compare tr:last-child td {
   border-bottom: none;
 }
