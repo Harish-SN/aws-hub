@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Databases</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>AWS Databases</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      AWS offers multiple <strong>purpose-built database services</strong> optimized for different data models,
+      workloads, latency needs, and consistency guarantees. Includes
+      <strong>serverless modes, global scaling, and analytics integrations</strong> — ideal for
+      certifications, interviews, and architecture design.
+    </p>
+  </section>
+
+  <!-- ===================== DYNAMODB ===================== -->
+  <article>
+    <h2>Amazon DynamoDB</h2>
+    <p>
+      <strong>Type:</strong> NoSQL (Key-Value & Document)<br>
+      <strong>Schema:</strong> Flexible (schema-less items)<br>
+      <strong>Serverless:</strong> ✅ Fully serverless<br>
+      <strong>Scaling:</strong> Auto-scaling (On-Demand / Provisioned)<br>
+      <strong>Use Cases:</strong> Low-latency apps, IoT, gaming, e-commerce carts
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      DynamoDB is a <strong>fully serverless, low-latency NoSQL database</strong> with automatic
+      replication across multiple AZs and single-digit millisecond performance at any scale.
+    </p>
+
+    <ul>
+      <li>SSD-backed with automatic multi-AZ replication.</li>
+      <li>DynamoDB Streams for event-driven architectures.</li>
+      <li>DAX for microsecond read latency.</li>
+      <li>Zero-ETL integration with Amazon Redshift.</li>
+      <li>Global Tables for multi-region active-active access.</li>
+    </ul>
+
+    <p><strong>Limitations:</strong> 400 KB item size, no joins, indexing via GSIs/LSIs only.</p>
+  </article>
+
+  <!-- ===================== DOCUMENTDB ===================== -->
+  <article>
+    <h2>Amazon DocumentDB (MongoDB-compatible)</h2>
+    <p>
+      <strong>Type:</strong> NoSQL (Document)<br>
+      <strong>Schema:</strong> Flexible (JSON-like documents)<br>
+      <strong>Serverless:</strong> ✅ Yes (Serverless cluster mode)<br>
+      <strong>Scaling:</strong> Auto-scaling compute & storage<br>
+      <strong>Use Cases:</strong> Catalogs, content management, user profiles
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      DocumentDB is a <strong>managed document database compatible with MongoDB APIs</strong>.
+      Serverless mode removes cluster sizing while AWS manages capacity behind the scenes.
+    </p>
+
+    <ul>
+      <li>Compatible with MongoDB drivers & aggregation pipelines.</li>
+      <li>Automatic storage scaling up to 128 TB.</li>
+      <li>Managed backups, patching, and replication.</li>
+      <li>Supports vector-style similarity workloads via integrations.</li>
+    </ul>
+
+    <p>
+      <strong>Note:</strong> Not identical to open-source MongoDB — feature parity differs.
+    </p>
+  </article>
+
+  <!-- ===================== RDS ===================== -->
+  <article>
+    <h2>Amazon RDS</h2>
+    <p>
+      <strong>Type:</strong> Relational (SQL)<br>
+      <strong>Schema:</strong> Fixed<br>
+      <strong>Serverless:</strong> ❌ No (Aurora provides serverless option)<br>
+      <strong>Scaling:</strong> Vertical scaling + read replicas<br>
+      <strong>Use Cases:</strong> Traditional applications, ERP, CRM
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      RDS is a <strong>managed relational database service</strong> supporting MySQL,
+      PostgreSQL, Oracle, SQL Server, and MariaDB.
+    </p>
+
+    <ul>
+      <li>Multi-AZ deployments for high availability.</li>
+      <li>Read replicas for read scaling.</li>
+      <li>Automated backups and patching.</li>
+      <li>Blue/Green deployments for safer upgrades.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== AURORA ===================== -->
+  <article>
+    <h2>Amazon Aurora</h2>
+    <p>
+      <strong>Type:</strong> Relational (MySQL & PostgreSQL compatible)<br>
+      <strong>Schema:</strong> Fixed<br>
+      <strong>Serverless:</strong> ✅ Aurora Serverless v2<br>
+      <strong>Scaling:</strong> Auto-scaling compute & storage (up to 128 TB)<br>
+      <strong>Use Cases:</strong> SaaS, cloud-native enterprise apps
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      Aurora is a <strong>cloud-native relational database</strong> with distributed storage
+      replicated across 3 AZs (6 copies) for durability and performance.
+    </p>
+
+    <ul>
+      <li>Millisecond-level compute scaling (Serverless v2).</li>
+      <li>Up to 15 read replicas.</li>
+      <li>Zero-ETL integration with Amazon Redshift.</li>
+      <li>Global Database for low-latency global reads.</li>
+    </ul>
+
+    <p><strong>Limitation:</strong> Only MySQL & PostgreSQL compatible engines.</p>
+  </article>
+
+  <!-- ===================== NEPTUNE ===================== -->
+  <article>
+    <h2>Amazon Neptune</h2>
+    <p>
+      <strong>Type:</strong> Graph Database<br>
+      <strong>Schema:</strong> Flexible graph model<br>
+      <strong>Serverless:</strong> ✅ Neptune Serverless<br>
+      <strong>Scaling:</strong> Auto-scaling compute & replicas<br>
+      <strong>Use Cases:</strong> Fraud detection, recommendations, knowledge graphs
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      Neptune is a <strong>managed graph database</strong> optimized for highly connected data
+      using Gremlin and SPARQL query languages.
+    </p>
+
+    <ul>
+      <li>Fast graph traversals.</li>
+      <li>ACID-compliant graph transactions.</li>
+      <li>Supports up to 15 read replicas.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== KEYSPACES ===================== -->
+  <article>
+    <h2>Amazon Keyspaces (for Apache Cassandra)</h2>
+    <p>
+      <strong>Type:</strong> Wide-Column NoSQL<br>
+      <strong>Schema:</strong> Flexible<br>
+      <strong>Serverless:</strong> ✅ Fully serverless<br>
+      <strong>Scaling:</strong> Auto-scaling throughput<br>
+      <strong>Use Cases:</strong> IoT telemetry, time-series, distributed systems
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      Amazon Keyspaces is a <strong>serverless Cassandra-compatible database</strong>
+      using CQL with pay-per-request pricing.
+    </p>
+
+    <ul>
+      <li>No cluster management required.</li>
+      <li>Multi-region replication.</li>
+      <li>Integrates with analytics and ML pipelines.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== QLDB ===================== -->
+  <article>
+    <h2>Amazon QLDB (Quantum Ledger Database)</h2>
+    <p>
+      <strong>Type:</strong> Ledger Database<br>
+      <strong>Schema:</strong> Fixed<br>
+      <strong>Serverless:</strong> ✅ Fully managed<br>
+      <strong>Use Cases:</strong> Financial records, audits, supply chain
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      QLDB provides an <strong>immutable, cryptographically verifiable ledger</strong>
+      under a centralized authority.
+    </p>
+
+    <ul>
+      <li>Append-only immutable journal.</li>
+      <li>Cryptographic verification of history.</li>
+      <li>SQL-compatible PartiQL queries.</li>
+    </ul>
+
+    <p><strong>Note:</strong> “Quantum” refers to cryptographic integrity, not quantum computing.</p>
+  </article>
+
+  <!-- ===================== TIMESTREAM ===================== -->
+  <article>
+    <h2>Amazon Timestream</h2>
+    <p>
+      <strong>Type:</strong> Time-Series Database<br>
+      <strong>Schema:</strong> Flexible<br>
+      <strong>Serverless:</strong> ✅ Fully serverless<br>
+      <strong>Scaling:</strong> Automatic hot/cold tiering<br>
+      <strong>Use Cases:</strong> Metrics, IoT telemetry, observability
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      Timestream is a <strong>purpose-built time-series database</strong>
+      optimized for high-ingestion, time-based queries.
+    </p>
+
+    <ul>
+      <li>Automatic cost-based data tiering.</li>
+      <li>Optimized time-series query engine.</li>
+      <li>Integrates with Kinesis, IoT Core, Lambda, Grafana.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table (2025)</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Type</th>
+          <th>Schema</th>
+          <th>Serverless</th>
+          <th>Scaling</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>DynamoDB</td><td>NoSQL</td><td>Flexible</td><td>✅</td><td>Auto</td><td>Low-latency apps</td></tr>
+        <tr><td>DocumentDB</td><td>Document</td><td>Flexible</td><td>✅</td><td>Auto</td><td>JSON data</td></tr>
+        <tr><td>RDS</td><td>Relational</td><td>Fixed</td><td>❌</td><td>Instance-based</td><td>Traditional SQL</td></tr>
+        <tr><td>Aurora</td><td>Relational</td><td>Fixed</td><td>✅</td><td>Auto</td><td>Cloud-native SQL</td></tr>
+        <tr><td>Neptune</td><td>Graph</td><td>Flexible</td><td>✅</td><td>Auto</td><td>Relationship queries</td></tr>
+        <tr><td>Keyspaces</td><td>Wide-column</td><td>Flexible</td><td>✅</td><td>Auto</td><td>Cassandra workloads</td></tr>
+        <tr><td>QLDB</td><td>Ledger</td><td>Fixed</td><td>✅</td><td>Auto</td><td>Audit & compliance</td></tr>
+        <tr><td>Timestream</td><td>Time-series</td><td>Flexible</td><td>✅</td><td>Auto-tiering</td><td>Telemetry</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Databases — Built by Harish</p>
+</footer>
+
+</body>
+</html>
