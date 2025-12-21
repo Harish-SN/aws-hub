@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Monitoring, Auditing & Cost Governance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Monitoring, Auditing & Cost Governance</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>This 2025 edition covers AWS <strong>monitoring, observability, auditing, cost management, and governance</strong> services to ensure reliability, cost control, and visibility across your cloud environment.</p>
+  </section>
+
+  <!-- ===================== CLOUDWATCH ===================== -->
+  <article>
+    <h2>Amazon CloudWatch</h2>
+    <p><strong>Type:</strong> Monitoring & Observability  
+       <br><strong>Use Cases:</strong> Metrics, logs, alarms, dashboards, traces</p>
+
+    <h3>Overview</h3>
+    <p>CloudWatch collects logs and metrics from AWS services and applications.</p>
+    <ul>
+      <li>CloudWatch Metrics, Logs, Alarms, Dashboards.</li>
+      <li>Log Insights for log queries.</li>
+      <li>X-Ray integration for tracing.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CLOUDWATCH SYNTETHICS ===================== -->
+  <article>
+    <h2>CloudWatch Synthetics</h2>
+    <p><strong>Type:</strong> Synthetic Testing (Canaries)  
+       <br><strong>Use Cases:</strong> API health checks, uptime monitoring</p>
+
+    <h3>Overview</h3>
+    <p>Runs automated canary scripts to monitor websites/APIs 24×7.</p>
+    <ul>
+      <li>Detect UI failures.</li>
+      <li>Latency monitoring.</li>
+      <li>Integrates with CloudWatch alarms.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== RUM ===================== -->
+  <article>
+    <h2>CloudWatch RUM</h2>
+    <p><strong>Type:</strong> Real User Monitoring  
+       <br><strong>Use Cases:</strong> Track frontend performance & user behavior</p>
+
+    <h3>Overview</h3>
+    <p>Collects performance data from real user browsers/mobile apps.</p>
+    <ul>
+      <li>Frontend errors, page loads, JS issues.</li>
+      <li>Correlation with backend traces.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== APPLICATION SIGNALS ===================== -->
+  <article>
+    <h2>CloudWatch Application Signals</h2>
+    <p><strong>Type:</strong> Service-Level Observability  
+       <br><strong>Use Cases:</strong> SLO/SLI monitoring for microservices</p>
+
+    <h3>Overview</h3>
+    <p>Provides golden metrics: availability, latency, errors, throughput.</p>
+    <ul>
+      <li>Auto-detects service dependencies.</li>
+      <li>Integrated with X-Ray and Lambda.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== EVENTBRIDGE ===================== -->
+  <article>
+    <h2>Amazon EventBridge</h2>
+    <p><strong>Type:</strong> Event Bus / Event Routing  
+       <br><strong>Use Cases:</strong> Automation, notifications, serverless workflows</p>
+
+    <h3>Overview</h3>
+    <p>EventBridge routes events between AWS services and your applications.</p>
+    <ul>
+      <li>Automates CloudWatch / CloudTrail events.</li>
+      <li>Integrates with SaaS tools.</li>
+      <li>Supports scheduled cron rules.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CLOUDTRAIL ===================== -->
+  <article>
+    <h2>AWS CloudTrail</h2>
+    <p><strong>Type:</strong> Audit & API Activity Logging  
+       <br><strong>Use Cases:</strong> Forensics, security investigations</p>
+
+    <h3>Overview</h3>
+    <p>CloudTrail logs every API call made through the console, CLI, SDK.</p>
+    <ul>
+      <li>CloudTrail Lake for SQL-style queries.</li>
+      <li>Logs to S3 for long-term retention.</li>
+      <li>Integrated with GuardDuty + Config.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CONFIG ===================== -->
+  <article>
+    <h2>AWS Config</h2>
+    <p><strong>Type:</strong> Resource Compliance & Drift  
+       <br><strong>Use Cases:</strong> Governance, audits, resource history</p>
+
+    <h3>Overview</h3>
+    <p>Tracks the configuration history of AWS resources and checks for compliance.</p>
+    <ul>
+      <li>Detects non-compliant resources.</li>
+      <li>Records configuration change timeline.</li>
+      <li>Integrates with Organizations.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COST EXPLORER ===================== -->
+  <article>
+    <h2>AWS Cost Explorer</h2>
+    <p><strong>Type:</strong> Cost Analytics  
+       <br><strong>Use Cases:</strong> Cost breakdowns, forecasting</p>
+
+    <h3>Overview</h3>
+    <p>Provides cost visibility across accounts, services, and usage.</p>
+    <ul>
+      <li>Daily/Monthly spend tracking.</li>
+      <li>RI & Savings Plan recommendations.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== AWS BUDGETS ===================== -->
+  <article>
+    <h2>AWS Budgets</h2>
+    <p><strong>Type:</strong> Cost Control  
+       <br><strong>Use Cases:</strong> Alerts for cost thresholds</p>
+
+    <h3>Overview</h3>
+    <p>Set custom cost/usage budgets with alerts.</p>
+    <ul>
+      <li>Email/SNS alerts.</li>
+      <li>Supports RI & Savings Plan tracking.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRUSTED ADVISOR ===================== -->
+  <article>
+    <h2>AWS Trusted Advisor</h2>
+    <p><strong>Type:</strong> Optimization Recommendations  
+       <br><strong>Use Cases:</strong> Performance, cost, security</p>
+
+    <h3>Overview</h3>
+    <p>Advisor gives real-time best-practice recommendations.</p>
+    <ul>
+      <li>Cost optimization.</li>
+      <li>Security checks like public S3.</li>
+      <li>Performance boosts.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== AWS HEALTH DASHBOARD ===================== -->
+  <article>
+    <h2>AWS Health Dashboard</h2>
+    <p><strong>Type:</strong> Account & Service Health  
+       <br><strong>Use Cases:</strong> Outage alerts, planned maintenance</p>
+
+    <h3>Overview</h3>
+    <p>Shows personalized AWS outage and service impact notifications.</p>
+    <ul>
+      <li>Organization-wide health visibility.</li>
+      <li>Integration with EventBridge.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table — Monitoring & Governance</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Best For</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CloudWatch</td><td>Observability</td><td>Logs, metrics, alarms</td><td>Main monitoring tool</td></tr>
+        <tr><td>Synthetics</td><td>Monitoring</td><td>API uptime</td><td>Canaries</td></tr>
+        <tr><td>RUM</td><td>Frontend Monitoring</td><td>User performance</td><td>JS/web apps</td></tr>
+        <tr><td>App Signals</td><td>SLO/SLA</td><td>Golden signals</td><td>Microservices</td></tr>
+        <tr><td>EventBridge</td><td>Automation</td><td>Routing events</td><td>Cron + integrations</td></tr>
+        <tr><td>CloudTrail</td><td>Auditing</td><td>API logs</td><td>Forensics</td></tr>
+        <tr><td>AWS Config</td><td>Governance</td><td>Compliance & drift</td><td>Resource tracking</td></tr>
+        <tr><td>Cost Explorer</td><td>Billing</td><td>Cost analytics</td><td>Forecasting</td></tr>
+        <tr><td>AWS Budgets</td><td>Alerts</td><td>Cost thresholds</td><td>Email/SNS</td></tr>
+        <tr><td>Trusted Advisor</td><td>Optimization</td><td>Cost & security</td><td>Support plan dependent</td></tr>
+        <tr><td>Health Dashboard</td><td>Health</td><td>Outage alerts</td><td>AWS service status</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Monitoring Tools — Built by FlyingBunny 🐰 (2025)</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #0b0f14;
+  --bg-card: #111827;
+  --bg-card-hover: #162033;
+  --bg-table: #0f172a;
+
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-heading: #f9fafb;
+
+  --accent: #38bdf8;
+  --accent-soft: #0ea5e9;
+
+  --border: #1f2937;
+}
+
+/* ===============================
+   BODY & LAYOUT
+================================ */
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #020617, #020617 60%, #0b1220);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--text-heading);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+/* ===============================
+   INTRO SECTION
+================================ */
+.intro {
+  margin-bottom: 2.5rem;
+}
+
+.intro p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   ARTICLES / CARDS
+================================ */
+article {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+article:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+article h2 {
+  color: var(--accent);
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+article h3 {
+  color: var(--text-heading);
+  font-size: 1.05rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+article p {
+  color: var(--text-main);
+  margin-bottom: 0.7rem;
+}
+
+article ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+article li {
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   TABLES
+================================ */
+section h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--text-heading);
+}
+
+table.compare {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-table);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+table.compare thead {
+  background-color: #020617;
+}
+
+table.compare th,
+table.compare td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+table.compare th {
+  color: var(--text-heading);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+table.compare td {
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+table.compare tr:hover td {
+  background-color: #111c2f;
+  color: var(--text-main);
+}
+
+table.compare tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: #020617;
+}
+
+footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   CODE / INLINE
+================================ */
+code {
+  background-color: #020617;
+  color: var(--accent);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  article {
+    padding: 1.4rem;
+  }
+
+  table.compare th,
+  table.compare td {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+}
