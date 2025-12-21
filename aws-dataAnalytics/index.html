@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Data Analytics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AWS Data Analytics</h1>
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+      <p>AWS provides multiple <strong>purpose-built analytics services</strong> for streaming, querying, processing, search, observability, and visualization.</p>
+    </section>
+
+    <!-- ===================== KINESIS ===================== -->
+    <article>
+      <h2>Amazon Kinesis</h2>
+      <p><strong>Type:</strong> Real-time Data Streaming<br>
+         <strong>Serverless:</strong> ✅ Yes<br>
+         <strong>Scaling:</strong> Auto or provisioned capacity per stream<br>
+         <strong>Use Cases:</strong> IoT streams, real-time analytics, logs, clickstreams</p>
+
+      <h3>Overview</h3>
+      <p>Kinesis enables ingestion, buffering, processing, and routing of real-time streaming data.</p>
+      <ul>
+        <li>Sub-second latency streaming.</li>
+        <li>Integrates with Lambda, Firehose, OpenSearch, Redshift.</li>
+        <li>Modules: Data Streams, Firehose, Data Analytics (Flink), Video Streams.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== ATHENA ===================== -->
+    <article>
+      <h2>Amazon Athena</h2>
+      <p><strong>Type:</strong> Serverless Query Engine (SQL on S3 & Lakehouse)<br>
+         <strong>Serverless:</strong> ✅ Yes<br>
+         <strong>Scaling:</strong> Auto-scales per query<br>
+         <strong>Use Cases:</strong> Ad-hoc SQL, querying Iceberg tables, data lake analytics</p>
+
+      <h3>Overview</h3>
+      <p>Athena is serverless Presto/Trino that queries data directly from S3 or Iceberg.</p>
+      <ul>
+        <li>Zero infrastructure to manage.</li>
+        <li>Supports Iceberg, Parquet, JSON, CSV, ORC, Avro.</li>
+        <li>Uses Glue Data Catalog for metadata.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== REDSHIFT ===================== -->
+    <article>
+      <h2>Amazon Redshift</h2>
+      <p><strong>Type:</strong> Cloud Data Warehouse<br>
+         <strong>Serverless:</strong> ✅ Yes (Redshift Serverless)<br>
+         <strong>Scaling:</strong> Auto-scaling or cluster node-based<br>
+         <strong>Use Cases:</strong> Enterprise BI, high-concurrency SQL</p>
+
+      <h3>Overview</h3>
+      <p>Redshift is a massively parallel, columnar data warehouse.</p>
+      <ul>
+        <li><strong>Redshift Serverless</strong> scales automatically.</li>
+        <li>Redshift Spectrum queries S3/Iceberg without loading.</li>
+        <li>Integrates with S3, Glue, QuickSight, Firehose.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== LAKE FORMATION ===================== -->
+    <article>
+      <h2>AWS Lake Formation</h2>
+      <p><strong>Type:</strong> Data Lake Governance & Access Control<br>
+         <strong>Serverless:</strong> ✅ Yes<br>
+         <strong>Use Cases:</strong> Lakehouse security, multi-team access, fine-grained permissions</p>
+
+      <h3>Overview</h3>
+      <p>Lake Formation secures data lakes and lakehouse tables (Iceberg) and centralizes permissions.</p>
+      <ul>
+        <li>Provides table-, column-, and row-level security.</li>
+        <li>Works with Athena, Redshift Spectrum, EMR, Glue.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== GLUE ===================== -->
+    <article>
+      <h2>AWS Glue</h2>
+      <p><strong>Type:</strong> ETL & Data Integration<br>
+         <strong>Serverless:</strong> ✅ Yes<br>
+         <strong>Use Cases:</strong> ETL pipelines, data catalog, data prep</p>
+
+      <h3>Overview</h3>
+      <p>Glue prepares data for analytics using Spark-based jobs and schema discovery.</p>
+      <ul>
+        <li>Glue Studio for visual ETL.</li>
+        <li>Glue DataBrew for no-code data cleaning.</li>
+        <li>Glue Data Catalog is used across Athena/Redshift/EMR.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== QUICK SIGHT ===================== -->
+    <article>
+      <h2>Amazon QuickSight</h2>
+      <p><strong>Type:</strong> Serverless BI Dashboards<br>
+         <strong>Use Cases:</strong> Business dashboards, ML insights, embedded analytics</p>
+
+      <h3>Overview</h3>
+      <p>QuickSight provides interactive dashboards with SPICE in-memory caching.</p>
+      <ul>
+        <li>Integrates with Redshift, Athena, RDS, S3.</li>
+        <li>ML-powered anomaly detection.</li>
+        <li>Pay-per-session pricing.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== EMR ===================== -->
+    <article>
+      <h2>Amazon EMR</h2>
+      <p><strong>Type:</strong> Big Data Processing (Spark, Hadoop, Hive)<br>
+         <strong>Serverless:</strong> ✅ Yes (EMR Serverless)<br>
+         <strong>Use Cases:</strong> ETL at scale, machine learning, big data pipelines</p>
+
+      <h3>Overview</h3>
+      <p>EMR is the most cost-efficient service for Spark/Hadoop workloads.</p>
+      <ul>
+        <li>Supports Spark, Presto, Hive, Hadoop, Trino.</li>
+        <li>EMR Serverless removes cluster management.</li>
+        <li>Deep integration with Glue & Lake Formation.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== OPENSEARCH ===================== -->
+    <article>
+      <h2>Amazon OpenSearch Service</h2>
+      <p><strong>Type:</strong> Search, Log Analytics, Vector Search<br>
+         <strong>Serverless:</strong> ✅ Yes<br>
+         <strong>Use Cases:</strong> Full-text search, log analytics, observability dashboards</p>
+
+      <h3>Overview</h3>
+      <p>OpenSearch powers search workloads and log analytics.</p>
+      <ul>
+        <li>Managed clusters or serverless collections.</li>
+        <li>Supports Kinesis, Firehose, CloudWatch Logs ingestion.</li>
+        <li>Supports vector search (kNN) for ML workloads.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== MSK (Kafka) ===================== -->
+    <article>
+      <h2>Amazon MSK (Managed Kafka)</h2>
+      <p><strong>Type:</strong> Streaming Platform (Kafka)<br>
+         <strong>Serverless:</strong> ✅ MSK Serverless<br>
+         <strong>Use Cases:</strong> High-throughput streaming, Kafka-based apps</p>
+
+      <h3>Overview</h3>
+      <p>A fully managed Apache Kafka service.</p>
+      <ul>
+        <li>Fully manages Kafka brokers and Zookeeper.</li>
+        <li>Can run in VPC, multi-AZ, secure networking.</li>
+        <li>MSK Serverless scales compute & storage automatically.</li>
+        <li>Compatible with all Kafka producers/consumers.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== Managed Apache Flink ===================== -->
+    <article>
+      <h2>Amazon Managed Service for Apache Flink</h2>
+      <p><strong>Type:</strong> Real-time Stream Processing (Apache Flink)<br>
+         <strong>Serverless:</strong> ✅ Yes<br>
+         <strong>Use Cases:</strong> Stream transformations, real-time enrichment, anomaly detection</p>
+
+      <h3>Overview</h3>
+      <p>Runs any Apache Flink application fully managed by AWS.</p>
+      <ul>
+        <li>Write Flink apps in Java, Scala, Python, SQL.</li>
+        <li>Connects to Kinesis Data Streams & MSK.</li>
+        <li>Automatic scaling, checkpoints & state management.</li>
+        <li>Used for complex stream processing pipelines.</li>
+      </ul>
+    </article>
+
+    <!-- ===================== COMPARISON TABLE ===================== -->
+    <section>
+      <h2>📊 Comparison Table (2025)</h2>
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Type</th>
+            <th>Serverless</th>
+            <th>Scaling</th>
+            <th>Integrations</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Kinesis</td><td>Streaming</td><td>✅</td><td>Auto or provisioned</td><td>Lambda, Firehose</td><td>Real-time ingestion</td></tr>
+          <tr><td>MSK (Kafka)</td><td>Streaming Platform</td><td>✅ (Serverless)</td><td>Auto storage/compute</td><td>Kafka apps, Flink</td><td>High throughput</td></tr>
+          <tr><td>Apache Flink</td><td>Stream Processing</td><td>✅</td><td>Auto scale</td><td>Kinesis, MSK</td><td>Real-time processing</td></tr>
+          <tr><td>Athena</td><td>Query Engine</td><td>✅</td><td>Per query</td><td>S3, Glue</td><td>SQL on S3</td></tr>
+          <tr><td>Redshift</td><td>Data Warehouse</td><td>✅</td><td>Auto or cluster</td><td>Glue, S3</td><td>Enterprise BI</td></tr>
+          <tr><td>Lake Formation</td><td>Governance</td><td>✅</td><td>Auto</td><td>Athena, EMR</td><td>Permissions</td></tr>
+          <tr><td>Glue</td><td>ETL</td><td>✅</td><td>Auto</td><td>S3, Redshift</td><td>Data prep</td></tr>
+          <tr><td>EMR</td><td>Big Data</td><td>✅</td><td>Auto</td><td>S3, Glue</td><td>Spark/Hadoop</td></tr>
+          <tr><td>OpenSearch</td><td>Search / Logs</td><td>✅</td><td>Auto / cluster</td><td>Kinesis, CW Logs</td><td>Search/Observability</td></tr>
+          <tr><td>QuickSight</td><td>BI</td><td>✅</td><td>Auto</td><td>Athena, Redshift</td><td>Dashboards</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>AWS Data Analytics Revision — Built by Harish</p>
+  </footer>
+
+</body>
+</html>
