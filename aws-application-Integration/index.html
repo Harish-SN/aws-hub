@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Application Integration Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Application Integration Services</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      AWS Application Integration Services help you build
+      <strong>event-driven, loosely coupled, and scalable</strong>
+      distributed systems using queues, event buses, APIs, and workflow engines.
+    </p>
+  </section>
+
+  <!-- ===================== SQS ===================== -->
+  <article>
+    <h2>Amazon SQS (Simple Queue Service)</h2>
+    <p>
+      <strong>Type:</strong> Managed Message Queue<br>
+      <strong>Models:</strong> Standard, FIFO<br>
+      <strong>Use Cases:</strong> Decoupling, buffering, async processing
+    </p>
+
+    <h3>Overview</h3>
+    <p>SQS enables reliable message queuing between distributed components.</p>
+    <ul>
+      <li>Standard: high throughput, at-least-once delivery.</li>
+      <li>FIFO: exactly-once processing and ordering.</li>
+      <li>Dead-letter queues supported.</li>
+      <li>Fully serverless.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SNS ===================== -->
+  <article>
+    <h2>Amazon SNS (Simple Notification Service)</h2>
+    <p>
+      <strong>Type:</strong> Pub/Sub Messaging<br>
+      <strong>Use Cases:</strong> Fan-out, notifications, event broadcasting
+    </p>
+
+    <h3>Overview</h3>
+    <p>SNS delivers messages to multiple subscribers.</p>
+    <ul>
+      <li>Supports SQS, Lambda, HTTP, Email, SMS.</li>
+      <li>Used heavily for event fan-out patterns.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== EVENTBRIDGE ===================== -->
+  <article>
+    <h2>Amazon EventBridge</h2>
+    <p>
+      <strong>Type:</strong> Event Bus & Routing<br>
+      <strong>Use Cases:</strong> Event-driven architecture, SaaS integration
+    </p>
+
+    <h3>Overview</h3>
+    <p>EventBridge routes events from AWS services, custom apps, and SaaS providers.</p>
+    <ul>
+      <li>Event filtering, retries, and schemas.</li>
+      <li>Supports custom event buses.</li>
+      <li>Includes Scheduler and Pipes.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== EVENTBRIDGE PIPES ===================== -->
+  <article>
+    <h2>Amazon EventBridge Pipes</h2>
+    <p>
+      <strong>Type:</strong> Point-to-Point Integration<br>
+      <strong>Use Cases:</strong> Source → target wiring without code
+    </p>
+
+    <h3>Overview</h3>
+    <p>Pipes connect event sources directly to targets.</p>
+    <ul>
+      <li>Built-in filtering and transformations.</li>
+      <li>Supports SQS, Kinesis, DynamoDB Streams.</li>
+      <li>Reduces Lambda glue code.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== STEP FUNCTIONS ===================== -->
+  <article>
+    <h2>AWS Step Functions</h2>
+    <p>
+      <strong>Type:</strong> Serverless Workflow Orchestration<br>
+      <strong>Use Cases:</strong> Orchestration, approvals, long-running workflows
+    </p>
+
+    <h3>Overview</h3>
+    <p>Coordinates distributed applications using state machines.</p>
+    <ul>
+      <li>Standard workflows: durable, up to 1 year.</li>
+      <li>Express workflows: high-throughput, low latency.</li>
+      <li>Visual workflow builder.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== AMAZON MQ ===================== -->
+  <article>
+    <h2>Amazon MQ</h2>
+    <p>
+      <strong>Type:</strong> Managed Message Broker<br>
+      <strong>Protocols:</strong> ActiveMQ, RabbitMQ<br>
+      <strong>Use Cases:</strong> Legacy messaging migration
+    </p>
+
+    <h3>Overview</h3>
+    <p>Managed brokers for enterprise and legacy applications.</p>
+    <ul>
+      <li>Supports JMS, AMQP, STOMP, MQTT.</li>
+      <li>Runs on broker instances (not serverless).</li>
+      <li>Best for lift-and-shift messaging.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== API GATEWAY ===================== -->
+  <article>
+    <h2>Amazon API Gateway</h2>
+    <p>
+      <strong>Type:</strong> API Management<br>
+      <strong>Use Cases:</strong> REST, HTTP, WebSocket APIs
+    </p>
+
+    <h3>Overview</h3>
+    <p>Creates and manages scalable APIs.</p>
+    <ul>
+      <li>Throttling, caching, auth, monitoring.</li>
+      <li>Deep Lambda integration.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== APPSYNC ===================== -->
+  <article>
+    <h2>AWS AppSync</h2>
+    <p>
+      <strong>Type:</strong> GraphQL API Service<br>
+      <strong>Use Cases:</strong> Realtime & offline-capable apps
+    </p>
+
+    <h3>Overview</h3>
+    <p>Fully managed GraphQL with real-time subscriptions.</p>
+    <ul>
+      <li>Integrates with DynamoDB, Lambda, OpenSearch.</li>
+      <li>WebSocket-based subscriptions.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== APPFABRIC ===================== -->
+  <article>
+    <h2>AWS AppFabric</h2>
+    <p>
+      <strong>Type:</strong> SaaS Integration & Observability<br>
+      <strong>Use Cases:</strong> Unified SaaS security & logs
+    </p>
+
+    <h3>Overview</h3>
+    <p>Normalizes security and audit data from SaaS applications.</p>
+    <ul>
+      <li>Works with Slack, Okta, Zoom, M365.</li>
+      <li>Feeds Security Lake, SIEM tools.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table — Application Integration (2025)</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Type</th>
+          <th>Serverless</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SQS</td><td>Message Queue</td><td>✅</td><td>Decoupling</td></tr>
+        <tr><td>SNS</td><td>Pub/Sub</td><td>✅</td><td>Fan-out</td></tr>
+        <tr><td>EventBridge</td><td>Event Bus</td><td>✅</td><td>EDA</td></tr>
+        <tr><td>Pipes</td><td>P2P Integration</td><td>✅</td><td>No-code wiring</td></tr>
+        <tr><td>Step Functions</td><td>Workflow</td><td>✅</td><td>Orchestration</td></tr>
+        <tr><td>Amazon MQ</td><td>Message Broker</td><td>❌</td><td>Legacy systems</td></tr>
+        <tr><td>API Gateway</td><td>API Management</td><td>✅</td><td>REST/HTTP APIs</td></tr>
+        <tr><td>AppSync</td><td>GraphQL</td><td>✅</td><td>Realtime APIs</td></tr>
+        <tr><td>AppFabric</td><td>SaaS Integration</td><td>✅</td><td>SaaS observability</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Application Integration — Built by Harish</p>
+</footer>
+
+</body>
+</html>

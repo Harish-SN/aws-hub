@@ -1,0 +1,243 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #0b0f14;
+  --bg-card: #121826;
+  --bg-card-hover: #161d2f;
+
+  --text-primary: #e6eaf2;
+  --text-secondary: #a9b1c7;
+  --text-muted: #6f7a94;
+
+  --accent: #4da3ff;
+  --accent-soft: rgba(77, 163, 255, 0.15);
+  --border: #1f2940;
+
+  --success: #4ade80;
+  --warning: #facc15;
+  --danger: #f87171;
+
+  --radius: 14px;
+  --radius-small: 10px;
+}
+
+body {
+  background: radial-gradient(
+    circle at top,
+    #101726 0%,
+    #0b0f14 60%
+  );
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+header {
+  padding: 3.5rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(
+    to bottom,
+    rgba(77, 163, 255, 0.08),
+    transparent
+  );
+}
+
+header h1 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    var(--accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  margin-top: 0.75rem;
+  color: var(--text-secondary);
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.intro {
+  margin-bottom: 3rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(
+    to right,
+    var(--accent-soft),
+    transparent
+  );
+  border-radius: var(--radius-small);
+}
+
+.intro p {
+  color: var(--text-secondary);
+}
+
+article {
+  background: linear-gradient(
+    180deg,
+    var(--bg-card),
+    rgba(18, 24, 38, 0.92)
+  );
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(77, 163, 255, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+article:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+article:hover::before {
+  opacity: 1;
+}
+
+article h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
+article h3 {
+  font-size: 1rem;
+  margin: 1.2rem 0 0.4rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+article p {
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+article ul {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+
+article li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+article li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.compare thead {
+  background: linear-gradient(
+    to right,
+    rgba(77, 163, 255, 0.2),
+    rgba(77, 163, 255, 0.05)
+  );
+}
+
+.compare th,
+.compare td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.compare th {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.compare td {
+  color: var(--text-secondary);
+}
+
+.compare tbody tr:hover {
+  background: rgba(77, 163, 255, 0.08);
+}
+
+.compare td:contains("✅") {
+  color: var(--success);
+}
+
+.compare td:contains("❌") {
+  color: var(--danger);
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  background: linear-gradient(
+    to top,
+    rgba(77, 163, 255, 0.05),
+    transparent
+  );
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  article {
+    padding: 1.4rem 1.5rem;
+  }
+
+  header {
+    padding-top: 2.5rem;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+}
