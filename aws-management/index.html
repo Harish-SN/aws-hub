@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Management & Governance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Management & Governance</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      Covers AWS <strong>management, operations, governance, automation, and account control</strong>
+      services used for enterprise-scale environments, multi-account strategies, and operational excellence.
+    </p>
+  </section>
+
+  <!-- ===================== ORGANIZATIONS ===================== -->
+  <article>
+    <h2>AWS Organizations</h2>
+    <p><strong>Type:</strong> Multi-Account Management</p>
+    <ul>
+      <li>Service Control Policies (SCPs).</li>
+      <li>Organizational Units (OU).</li>
+      <li>Consolidated billing.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CONTROL TOWER ===================== -->
+  <article>
+    <h2>AWS Control Tower</h2>
+    <p><strong>Type:</strong> Landing Zone & Governance Automation</p>
+    <ul>
+      <li>Automated multi-account setup.</li>
+      <li>Preventive & detective guardrails.</li>
+      <li>Built on Organizations.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SYSTEMS MANAGER ===================== -->
+  <article>
+    <h2>AWS Systems Manager (SSM)</h2>
+    <p><strong>Type:</strong> Operations & Fleet Management</p>
+    <ul>
+      <li>Run Command & Automation.</li>
+      <li>Patch Manager.</li>
+      <li>Session Manager (no SSH).</li>
+      <li>Parameter Store.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== APP CONFIG ===================== -->
+  <article>
+    <h2>AWS AppConfig</h2>
+    <p><strong>Type:</strong> Runtime Configuration Management</p>
+    <ul>
+      <li>Feature flags & dynamic configuration.</li>
+      <li>Safe rollouts with validators.</li>
+      <li>Part of Systems Manager.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CLOUDFORMATION ===================== -->
+  <article>
+    <h2>AWS CloudFormation</h2>
+    <p><strong>Type:</strong> Infrastructure as Code (IaC)</p>
+    <ul>
+      <li>Declarative YAML/JSON templates.</li>
+      <li>Drift detection.</li>
+      <li>StackSets for multi-account deployments.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CDK ===================== -->
+  <article>
+    <h2>AWS CDK (Cloud Development Kit)</h2>
+    <p><strong>Type:</strong> Code-Based IaC</p>
+    <ul>
+      <li>TypeScript, Python, Java, Go.</li>
+      <li>Generates CloudFormation.</li>
+      <li>Reusable constructs.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SERVICE CATALOG ===================== -->
+  <article>
+    <h2>AWS Service Catalog</h2>
+    <p><strong>Type:</strong> Governed Self-Service Provisioning</p>
+    <ul>
+      <li>Approved infrastructure products.</li>
+      <li>Controlled deployments for teams.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== RESOURCE EXPLORER ===================== -->
+  <article>
+    <h2>AWS Resource Explorer</h2>
+    <p><strong>Type:</strong> Global Resource Discovery</p>
+    <ul>
+      <li>Search resources across regions/accounts.</li>
+      <li>Tag-based discovery.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== LICENSE MANAGER ===================== -->
+  <article>
+    <h2>AWS License Manager</h2>
+    <p><strong>Type:</strong> License Governance</p>
+    <ul>
+      <li>Track Windows, SQL, BYOL licenses.</li>
+      <li>Integrates with Systems Manager.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SERVICE QUOTAS ===================== -->
+  <article>
+    <h2>AWS Service Quotas</h2>
+    <p><strong>Type:</strong> Limits & Quota Management</p>
+    <ul>
+      <li>View service limits.</li>
+      <li>Request quota increases.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRUSTED ADVISOR ===================== -->
+  <article>
+    <h2>AWS Trusted Advisor</h2>
+    <p><strong>Type:</strong> Optimization & Governance</p>
+    <ul>
+      <li>Cost, performance, security recommendations.</li>
+      <li>Support-plan dependent.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== OPSWORKS ===================== -->
+  <article>
+    <h2>AWS OpsWorks <em>(Legacy)</em></h2>
+    <p><strong>Type:</strong> Configuration Management</p>
+    <ul>
+      <li>Chef & Puppet automation.</li>
+      <li>Avoid for new workloads.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== WELL ARCHITECTED ===================== -->
+  <article>
+    <h2>AWS Well-Architected Tool</h2>
+    <p><strong>Type:</strong> Architecture Review</p>
+    <ul>
+      <li>6-pillar framework.</li>
+      <li>Workload reviews & improvements.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== HEALTH DASHBOARD ===================== -->
+  <article>
+    <h2>AWS Health Dashboard</h2>
+    <p><strong>Type:</strong> Service Health & Alerts</p>
+    <ul>
+      <li>Personalized outage notifications.</li>
+      <li>EventBridge integration.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Comparison Table — Management & Governance</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Primary Purpose</th>
+          <th>Serverless</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Organizations</td><td>Account Mgmt</td><td>Multi-account governance</td><td>Yes</td></tr>
+        <tr><td>Control Tower</td><td>Governance</td><td>Landing zone automation</td><td>Yes</td></tr>
+        <tr><td>Systems Manager</td><td>Operations</td><td>Fleet & patch management</td><td>Yes</td></tr>
+        <tr><td>AppConfig</td><td>Config Mgmt</td><td>Runtime configuration</td><td>Yes</td></tr>
+        <tr><td>CloudFormation</td><td>IaC</td><td>Declarative provisioning</td><td>Yes</td></tr>
+        <tr><td>CDK</td><td>IaC</td><td>Code-based infra</td><td>Yes</td></tr>
+        <tr><td>Service Catalog</td><td>Provisioning</td><td>Approved templates</td><td>Yes</td></tr>
+        <tr><td>Resource Explorer</td><td>Discovery</td><td>Global resource search</td><td>Yes</td></tr>
+        <tr><td>License Manager</td><td>Governance</td><td>License compliance</td><td>Yes</td></tr>
+        <tr><td>Service Quotas</td><td>Limits</td><td>Quota tracking</td><td>Yes</td></tr>
+        <tr><td>Trusted Advisor</td><td>Optimization</td><td>Best-practice checks</td><td>Yes</td></tr>
+        <tr><td>OpsWorks</td><td>Config Mgmt</td><td>Chef/Puppet (legacy)</td><td>No</td></tr>
+        <tr><td>Well-Architected</td><td>Review</td><td>Architecture assessment</td><td>Yes</td></tr>
+        <tr><td>Health Dashboard</td><td>Monitoring</td><td>AWS service health</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Management & Governance — Built by Harish</p>
+</footer>
+
+</body>
+</html>
