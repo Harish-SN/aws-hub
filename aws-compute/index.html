@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Compute Services — Complete Revision (2025)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Compute Services — Complete Revision (2025)</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      This 2025 edition covers AWS <strong>compute services</strong> including
+      virtual machines, containers, serverless functions, orchestration,
+      scaling, hybrid, and edge compute.
+    </p>
+  </section>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Compute Services Comparison (2025)</h2>
+
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Type</th>
+          <th>Serverless</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Amazon EC2</td>
+          <td>Virtual Machines</td>
+          <td>❌ No</td>
+          <td>Full OS control, custom runtimes</td>
+        </tr>
+        <tr>
+          <td>EC2 Auto Scaling</td>
+          <td>Scaling Service</td>
+          <td>N/A</td>
+          <td>Automatic EC2 capacity management</td>
+        </tr>
+        <tr>
+          <td>ALB / NLB</td>
+          <td>Load Balancing</td>
+          <td>N/A</td>
+          <td>Traffic distribution</td>
+        </tr>
+        <tr>
+          <td>AWS Lambda</td>
+          <td>Functions</td>
+          <td>✅ Yes</td>
+          <td>Event-driven workloads</td>
+        </tr>
+        <tr>
+          <td>Amazon ECS</td>
+          <td>Containers</td>
+          <td>Partial (Fargate)</td>
+          <td>Managed container workloads</td>
+        </tr>
+        <tr>
+          <td>Amazon EKS</td>
+          <td>Kubernetes</td>
+          <td>Partial</td>
+          <td>Enterprise Kubernetes</td>
+        </tr>
+        <tr>
+          <td>AWS App Runner</td>
+          <td>Managed Web Apps</td>
+          <td>✅ Yes</td>
+          <td>Fastest web app deployment</td>
+        </tr>
+        <tr>
+          <td>AWS Batch</td>
+          <td>Batch Processing</td>
+          <td>Partial</td>
+          <td>ML, HPC, batch jobs</td>
+        </tr>
+        <tr>
+          <td>Amazon Lightsail</td>
+          <td>Simple VMs</td>
+          <td>❌ No</td>
+          <td>Small apps, WordPress</td>
+        </tr>
+        <tr>
+          <td>AWS Outposts</td>
+          <td>Hybrid Compute</td>
+          <td>❌ No</td>
+          <td>On-prem AWS workloads</td>
+        </tr>
+        <tr>
+          <td>AWS Wavelength</td>
+          <td>5G Edge</td>
+          <td>N/A</td>
+          <td>Ultra-low latency mobile apps</td>
+        </tr>
+        <tr>
+          <td>AWS Local Zones</td>
+          <td>Edge Locations</td>
+          <td>N/A</td>
+          <td>Metro-area low latency</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ===================== LEGEND ===================== -->
+    <p style="margin-top:1rem;color:#9aa4b2;font-size:0.9rem;">
+      <strong>Serverless column legend:</strong>
+      ✅ Yes = Fully serverless execution (no servers or nodes to manage) &nbsp;|&nbsp;
+      ❌ No = User-managed compute (VMs or nodes) &nbsp;|&nbsp;
+      N/A = Not a compute execution model (supporting or location-based service)
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Compute Services — Built by FlyingBunny 🐰 (2025)</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* ===========================
+   GLOBAL DARK THEME
+=========================== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0d1117;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  background: #111827;
+  color: #ffffff;
+  padding: 25px 0;
+  text-align: center;
+  border-bottom: 1px solid #1f2937;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  color: #60a5fa;
+}
+
+/* ===========================
+   INTRO SECTION
+=========================== */
+.intro p {
+  background: #1e293b;
+  padding: 15px;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  color: #cbd5e1;
+}
+
+/* ===========================
+   ARTICLE CARDS
+=========================== */
+article {
+  background: #111827;
+  margin: 22px 0;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #3b82f6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+article h2 {
+  margin-top: 0;
+  color: #93c5fd;
+}
+
+article p {
+  color: #cbd5e1;
+}
+
+h3 {
+  margin-bottom: 5px;
+  color: #f1f5f9;
+}
+
+/* ===========================
+   LISTS
+=========================== */
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+/* ===========================
+   COMPARISON TABLE
+=========================== */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: #111827;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.compare th {
+  background: #1e3a8a;
+  color: #e2e8f0;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.compare td {
+  padding: 12px;
+  border-bottom: 1px solid #1f2937;
+  color: #cbd5e1;
+}
+
+.compare tr:nth-child(even) {
+  background: #0f172a;
+}
+
+.compare tr:hover {
+  background: #1e293b;
+  transition: 0.2s ease;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  background: #111827;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  border-top: 1px solid #1f2937;
+}
