@@ -1,0 +1,241 @@
+/* =========================================================
+   AWS OBSERVABILITY — CYBER DARK THEME (2025)
+   Designed for Logs, Monitoring, Security, Architecture
+========================================================= */
+
+/* -------------------- RESET -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- THEME TOKENS -------------------- */
+:root {
+  --bg-main: #05070d;
+  --bg-header: radial-gradient(1200px 600px at 50% -200px, #0b1a2f, #05070d 60%);
+  --bg-card: rgba(16, 24, 40, 0.75);
+  --bg-card-hover: rgba(20, 32, 56, 0.9);
+  --bg-table: rgba(8, 16, 32, 0.85);
+
+  --text-main: #e5e7eb;
+  --text-muted: #9aa4b2;
+  --text-dim: #6b7280;
+  --text-heading: #f8fafc;
+
+  --accent-cyan: #22d3ee;
+  --accent-blue: #38bdf8;
+  --accent-violet: #8b5cf6;
+
+  --border: rgba(148, 163, 184, 0.15);
+  --glow: 0 0 0 transparent;
+
+  --radius: 14px;
+}
+
+/* -------------------- BODY -------------------- */
+body {
+  font-family: "Inter", "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+  padding: 3.5rem 1.2rem 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header .subtitle {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* -------------------- LAYOUT -------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.2rem 5rem;
+}
+
+/* -------------------- INTRO -------------------- */
+.intro p {
+  max-width: 900px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+
+/* -------------------- CARD / ARTICLE -------------------- */
+article {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px transparent;
+  transition: box-shadow 0.25s ease;
+}
+
+article:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+}
+
+article:hover::before {
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+/* -------------------- HEADINGS -------------------- */
+article h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 0.6rem;
+}
+
+article h3 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* -------------------- TEXT -------------------- */
+article p {
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+article strong {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+article ul {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+}
+
+article li {
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+
+/* -------------------- TABLE -------------------- */
+section h2 {
+  margin: 3.5rem 0 1.2rem;
+  font-size: 1.6rem;
+  color: var(--text-heading);
+}
+
+table.compare {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-table);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+table.compare thead {
+  background: linear-gradient(90deg, #020617, #020617);
+}
+
+table.compare th,
+table.compare td {
+  padding: 1rem 1.1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+table.compare th {
+  color: var(--text-heading);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+table.compare td {
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+table.compare tr:hover td {
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--text-main);
+}
+
+table.compare tr:last-child td {
+  border-bottom: none;
+}
+
+/* -------------------- BEST PRACTICES -------------------- */
+section ul li {
+  color: var(--text-muted);
+}
+
+/* -------------------- CODE -------------------- */
+code {
+  background: rgba(2, 6, 23, 0.9);
+  color: var(--accent-blue);
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  border-top: 1px solid var(--border);
+  background: #020617;
+  padding: 1.8rem 1rem;
+  text-align: center;
+}
+
+footer p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  article {
+    padding: 1.6rem;
+  }
+
+  table.compare th,
+  table.compare td {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+}

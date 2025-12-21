@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AWS Logs — Complete Revision (2025)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Logs — Complete Revision (2025)</h1>
+  <p class="subtitle">A concise reference to AWS logging sources, collection, retention, analysis, and integrations.</p>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>Logs are the backbone of observability, security investigations, billing attribution, and compliance. This 2025 guide summarizes major AWS log sources, how to collect and store them, and how they integrate with analytics and security services.</p>
+  </section>
+
+  <!-- ===================== CLOUDTRAIL ===================== -->
+  <article>
+    <h2>AWS CloudTrail</h2>
+    <p><strong>Type:</strong> API activity / Management events & Data events<br>
+       <strong>Retention:</strong> S3 (long-term) + CloudTrail Lake (queryable)<br>
+       <strong>Use Cases:</strong> Audit trails, compliance, forensics, user activity</p>
+
+    <h3>Overview</h3>
+    <p>CloudTrail records API calls and account activity across AWS services. It offers management events (console, SDK, CLI) and optional data events (S3 object-level, Lambda invocations).</p>
+    <ul>
+      <li>Store logs in S3 for archival and long-term retention.</li>
+      <li>CloudTrail Lake provides SQL-like querying over events.</li>
+      <li>Integrates with GuardDuty, Security Hub, EventBridge.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CLOUDWATCH LOGS ===================== -->
+  <article>
+    <h2>Amazon CloudWatch Logs</h2>
+    <p><strong>Type:</strong> Application & OS logs, Lambda logs, custom logs<br>
+       <strong>Retention:</strong> Configurable per log group (days → indefinite)<br>
+       <strong>Use Cases:</strong> App troubleshooting, alarms, dashboards, retention</p>
+
+    <h3>Overview</h3>
+    <p>CloudWatch Logs collects logs from EC2, Lambda, container platforms, on-prem agents, and custom apps. Features include Log Insights (ad-hoc queries), subscription filters, and metric extraction.</p>
+    <ul>
+      <li>Log Insights: fast SQL-like queries for diagnostics and dashboards.</li>
+      <li>Subscription filters → Kinesis / Firehose / Lambda / OpenSearch.</li>
+      <li>Retention & export to S3 for cold storage.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== VPC FLOW LOGS ===================== -->
+  <article>
+    <h2>VPC Flow Logs</h2>
+    <p><strong>Type:</strong> Network flow metadata<br>
+       <strong>Retention:</strong> CloudWatch Logs, S3 (via Firehose)<br>
+       <strong>Use Cases:</strong> Network troubleshooting, traffic analysis, security investigations</p>
+
+    <h3>Overview</h3>
+    <p>VPC Flow Logs capture IP traffic flow information for ENIs, subnets, or whole VPCs. They are high-value for detecting unusual network patterns and vetting firewall rules.</p>
+    <ul>
+      <li>Deliver to CloudWatch Logs or S3 (via Kinesis Data Firehose).</li>
+      <li>Use with Network Firewall, Security Hub, SIEMs, or OpenSearch.</li>
+      <li>Can be sampled/filtered to control volume.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== ALB / NLB / CLB ACCESS LOGS ===================== -->
+  <article>
+    <h2>Load Balancer Access Logs (ALB / NLB / CLB)</h2>
+    <p><strong>Type:</strong> HTTP/HTTPS / TCP access records<br>
+       <strong>Retention:</strong> S3 (native)<br>
+       <strong>Use Cases:</strong> Traffic analytics, debugging, request-level forensics</p>
+
+    <h3>Overview</h3>
+    <p>ALB/NLB/CLB access logs provide a record of every request/connection through the load balancer, including client IP, request path, latency, and response codes.</p>
+    <ul>
+      <li>Delivered directly to S3 (configure prefix and lifecycle policies).</li>
+      <li>Analyze with Athena, EMR, OpenSearch, or third-party analytics tools.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== S3 ACCESS LOGS & S3 SERVER ACCESS/AWS CLOUDTRAIL DATA EVENTS ===================== -->
+  <article>
+    <h2>Amazon S3 Access Logs / S3 Server Access Logging / CloudTrail Data Events</h2>
+    <p><strong>Type:</strong> Object-level access activity<br>
+       <strong>Retention:</strong> S3<br>
+       <strong>Use Cases:</strong> Data access auditing, compliance, forensic access timelines</p>
+
+    <h3>Overview</h3>
+    <p>S3 server access logs and CloudTrail data events capture object-level operations (GET/PUT/DELETE). Use them for compliance audits and detecting data exfiltration or misconfigurations.</p>
+    <ul>
+      <li>Server access logs delivered to S3 — enable at bucket level.</li>
+      <li>CloudTrail data events for S3 provide richer context and attributes.</li>
+      <li>Analyse with Athena (SQL), Glue, or third-party SIEMs.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== RDS / DATABASE ENGINE LOGS ===================== -->
+  <article>
+    <h2>RDS & Database Logs (MySQL, Postgres, Aurora, MariaDB, Oracle)</h2>
+    <p><strong>Type:</strong> Engine logs (error, slow query, general) & audit logs<br>
+       <strong>Retention:</strong> CloudWatch Logs, S3 (export)<br>
+       <strong>Use Cases:</strong> DB performance tuning, forensic queries, security audits</p>
+
+    <h3>Overview</h3>
+    <p>Database engines can publish error logs, slow query logs, and audit logs to CloudWatch or S3. Aurora adds advanced slow query and audit capabilities.</p>
+    <ul>
+      <li>Enable enhanced monitoring & export to CloudWatch Logs.</li>
+      <li>Use slow query logs for optimization and security (SQL injection patterns).</li>
+    </ul>
+  </article>
+
+  <!-- ===================== LAMBDA LOGS ===================== -->
+  <article>
+    <h2>Lambda Logs</h2>
+    <p><strong>Type:</strong> Function stdout/stderr, platform logs<br>
+       <strong>Retention:</strong> CloudWatch Logs / subscription to Firehose<br>
+       <strong>Use Cases:</strong> Function debugging, performance, invocation tracing</p>
+
+    <h3>Overview</h3>
+    <p>Lambda automatically sends function logs (console output) to CloudWatch Logs. Combine with X-Ray traces and structured logging for observability.</p>
+    <ul>
+      <li>Use structured JSON logs for easy parsing in Log Insights or SIEMs.</li>
+      <li>Subscribe to log groups to send logs to OpenSearch / S3 / third-party tools.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== KINESIS DATA FIREHOSE & LOG COLLECTION ===================== -->
+  <article>
+    <h2>Kinesis Data Firehose (Log Delivery)</h2>
+    <p><strong>Type:</strong> Streaming delivery for logs & metrics<br>
+       <strong>Retention:</strong> Deliver to S3, OpenSearch, Redshift, Splunk<br>
+       <strong>Use Cases:</strong> Centralized log lake, near-real-time analytics</p>
+
+    <h3>Overview</h3>
+    <p>Firehose is a managed delivery service to route streaming logs to S3, OpenSearch, Redshift, or third-party endpoints with optional transformation (Lambda) and buffering.</p>
+    <ul>
+      <li>Use to centralize VPC Flow Logs, CloudWatch subscription logs, and custom application logs.</li>
+      <li>Supports record transformation, compression, and buffering settings.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== OPENSEARCH / ELASTICSEARCH INGEST ===================== -->
+  <article>
+    <h2>OpenSearch / Elasticsearch Ingest</h2>
+    <p><strong>Type:</strong> Full-text search & log analytics index<br>
+       <strong>Retention:</strong> Index lifecycle policies (ILM) and snapshots to S3<br>
+       <strong>Use Cases:</strong> Log search, observability dashboards, alerting</p>
+
+    <h3>Overview</h3>
+    <p>OpenSearch (managed) provides fast search and analytics for logs, supporting k-NN vector search for semantic logs and alerting/visualization via Dashboards.</p>
+    <ul>
+      <li>Ingest via Firehose, Logstash, Fluentd, or CloudWatch subscription.</li>
+      <li>Use ILM & snapshots to manage storage costs.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== AWS WAF & VPC FLOW / FIREWALL LOGS ===================== -->
+  <article>
+    <h2>WAF, Network Firewall & VPC Flow Logs (Security Logs)</h2>
+    <p><strong>Type:</strong> Firewall & WAF rule logs, network metadata<br>
+       <strong>Retention:</strong> CloudWatch Logs, S3<br>
+       <strong>Use Cases:</strong> Threat detection, rule effectiveness, security monitoring</p>
+
+    <h3>Overview</h3>
+    <p>WAF logs (CloudFront/ALB) and Network Firewall logs provide visibility into blocked/allowed requests and traffic patterns. Combine with GuardDuty and Security Hub for SIEM workflows.</p>
+    <ul>
+      <li>WAF can stream logs to S3 or Kinesis for near-real-time analysis.</li>
+      <li>Network Firewall logs capture rule matches for stateful/IDS-like inspection.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRAFFIC MIRROR & PACKET-LEVEL CAPTURE ===================== -->
+  <article>
+    <h2>Traffic Mirroring (VPC Traffic Mirroring)</h2>
+    <p><strong>Type:</strong> Packet-level capture (pcap) of VPC traffic<br>
+       <strong>Retention:</strong> Forward to collector appliances / EC2 / third-party analysis tools<br>
+       <strong>Use Cases:</strong> Deep packet inspection, IDS/IPS, compliance</p>
+
+    <h3>Overview</h3>
+    <p>VPC Traffic Mirroring copies network traffic at the packet level to monitoring appliances for deep analysis (e.g., Zeek, Suricata, commercial IDS tools).</p>
+    <ul>
+      <li>Useful for forensic capture of suspicious sessions and protocol analysis.</li>
+      <li>High volume — consider sampling and appropriate collectors.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== CENTRALIZATION & LOG LAKE PATTERN ===================== -->
+  <article>
+    <h2>Centralized Log Lake Pattern</h2>
+    <p><strong>Approach:</strong> Ingest → Normalize → Store → Index / Query<br>
+       <strong>Storage:</strong> Raw S3 (partitioned) + Glue Catalog + Athena / Lakehouse formats (Iceberg)</p>
+
+    <h3>Overview</h3>
+    <p>Best practice: centralize logs into a cost-optimized S3-based log lake, normalize formats (JSON/Parquet), catalog with Glue, query via Athena or Redshift Spectrum, and index hot data in OpenSearch for low-latency search.</p>
+    <ul>
+      <li>Use lifecycle rules (S3 Intelligent-Tiering or Glacier) to manage cost.</li>
+      <li>Apply Lake Formation / IAM policies for access control of sensitive logs.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== ANALYSIS & ALERTING ===================== -->
+  <article>
+    <h2>Analysis & Alerting — Tools & Patterns</h2>
+    <p><strong>Common Tools:</strong> CloudWatch Alarms, CloudWatch Logs Insights, Athena, OpenSearch, Kinesis Analytics, Security Hub, GuardDuty, SIEMs</p>
+
+    <h3>Overview</h3>
+    <p>Establish queries and metrics for baseline behavior, SLO breaches, and suspicious indicators. Automate alerts via EventBridge → SNS/Lambda for remediation.</p>
+    <ul>
+      <li>Use CloudWatch Contributor Insights to identify top-N contributors (IPs, users).</li>
+      <li>Create automated playbooks (EventBridge → Step Functions/Lambda) for common incidents.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 Quick Comparison Table — AWS Log Sources</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Log Source</th>
+          <th>Type</th>
+          <th>Delivery Destinations</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CloudTrail</td><td>API activity events</td><td>S3, CloudTrail Lake</td><td>Audit, forensics</td></tr>
+        <tr><td>CloudWatch Logs</td><td>App/OS/Lambda logs</td><td>CloudWatch, Firehose → S3/OpenSearch</td><td>Debugging, metrics extraction</td></tr>
+        <tr><td>VPC Flow Logs</td><td>Network flow metadata</td><td>CloudWatch, S3</td><td>Network analysis</td></tr>
+        <tr><td>ALB/NLB Access Logs</td><td>HTTP / TCP access</td><td>S3</td><td>Request-level analytics</td></tr>
+        <tr><td>S3 Access / Data Events</td><td>Object-level actions</td><td>S3, CloudTrail</td><td>Data access audit</td></tr>
+        <tr><td>RDS / DB Logs</td><td>DB engine logs</td><td>CloudWatch, S3</td><td>Performance & security</td></tr>
+        <tr><td>WAF / Network Firewall Logs</td><td>Firewall & rule matches</td><td>S3, CloudWatch</td><td>Security visibility</td></tr>
+        <tr><td>Traffic Mirroring</td><td>Packet captures</td><td>Collector EC2 / Appliances</td><td>Deep packet inspection</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===================== BEST PRACTICES ===================== -->
+  <section>
+    <h2>Best Practices (Short)</h2>
+    <ul>
+      <li>Centralize logs in S3 with lifecycle policies for cost control.</li>
+      <li>Use structured (JSON) logging and add metadata (request-id, user-id).</li>
+      <li>Instrument log sampling for very high volume sources (VPC Flow, Traffic Mirror).</li>
+      <li>Protect log access with IAM, KMS encryption, and Lake Formation for sensitive logs.</li>
+      <li>Automate retention and alerting; treat logs as immutable evidence for audits.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Logs Revision — Built by FlyingBunny 🐰 (2025 Edition)</p>
+</footer>
+
+</body>
+</html>
