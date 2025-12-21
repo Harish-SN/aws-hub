@@ -1,13 +1,11 @@
-/* ===========================
-   GLOBAL THEME — DEPLOYMENT
-=========================== */
+
 :root {
   --bg-main: #0a0f1a;
   --bg-card: #0f172a;
   --bg-soft: #111827;
   --border: #1f2937;
 
-  --accent: #f59e0b;        /* Deployment amber */
+  --accent: #f59e0b;
   --accent-soft: #fcd34d;
 
   --text-main: #e5e7eb;
@@ -30,9 +28,6 @@ body {
   padding: 30px 0;
 }
 
-/* ===========================
-   HEADER
-=========================== */
 header {
   background: linear-gradient(135deg, #020617, #020617);
   border-bottom: 1px solid var(--border);
@@ -47,10 +42,6 @@ header h1 {
   color: var(--accent);
   letter-spacing: 0.4px;
 }
-
-/* ===========================
-   INTRO
-=========================== */
 .intro p {
   background: linear-gradient(
     135deg,
@@ -63,9 +54,6 @@ header h1 {
   color: #fffbeb;
 }
 
-/* ===========================
-   DEPLOYMENT CARDS
-=========================== */
 article {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -108,9 +96,6 @@ strong {
   color: #f8fafc;
 }
 
-/* ===========================
-   LISTS
-=========================== */
 ul {
   margin-top: 12px;
   padding-left: 22px;
@@ -125,9 +110,6 @@ ul li::marker {
   color: var(--accent);
 }
 
-/* ===========================
-   COMPARISON TABLE
-=========================== */
 .compare {
   width: 100%;
   margin-top: 30px;
@@ -161,9 +143,6 @@ ul li::marker {
   background: rgba(245, 158, 11, 0.08);
 }
 
-/* ===========================
-   FOOTER
-=========================== */
 footer {
   margin-top: 50px;
   padding: 22px 0;
