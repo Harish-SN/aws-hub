@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Developer Tools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Developer Tools</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      This 2025 revision covers <strong>active AWS Developer Tools</strong> used for
+      CI/CD, source control, build & deployment, infrastructure as code,
+      observability, and resilience engineering.
+    </p>
+  </section>
+
+  <!-- ===================== CODECOMMIT ===================== -->
+  <article>
+    <h2>AWS CodeCommit</h2>
+    <p>
+      <strong>Type:</strong> Git-Based Source Control<br>
+      <strong>Serverless:</strong> ✅ Yes<br>
+      <strong>Use Cases:</strong> Private Git repositories, IAM-based access
+    </p>
+    <p>
+      Fully managed Git repositories with encryption and tight AWS integration.
+      Often replaced by GitHub in modern setups, but still supported.
+    </p>
+  </article>
+
+  <!-- ===================== CODEBUILD ===================== -->
+  <article>
+    <h2>AWS CodeBuild</h2>
+    <p>
+      <strong>Type:</strong> Build & Test Service<br>
+      <strong>Serverless:</strong> ✅ Yes<br>
+      <strong>Use Cases:</strong> Compile code, run tests, build artifacts
+    </p>
+    <p>
+      Serverless build service that executes <code>buildspec.yml</code> inside
+      managed containers and outputs artifacts to S3 or ECR.
+    </p>
+  </article>
+
+  <!-- ===================== CODEDEPLOY ===================== -->
+  <article>
+    <h2>AWS CodeDeploy</h2>
+    <p>
+      <strong>Type:</strong> Deployment Service<br>
+      <strong>Serverless:</strong> ❌ No (agent / service-based)<br>
+      <strong>Use Cases:</strong> EC2 and ECS deployments
+    </p>
+    <p>
+      Automates application deployments with lifecycle hooks, rollback,
+      in-place and blue/green strategies.
+    </p>
+  </article>
+
+  <!-- ===================== CODEPIPELINE ===================== -->
+  <article>
+    <h2>AWS CodePipeline</h2>
+    <p>
+      <strong>Type:</strong> CI/CD Orchestration<br>
+      <strong>Serverless:</strong> ✅ Yes<br>
+      <strong>Use Cases:</strong> Source → Build → Test → Deploy pipelines
+    </p>
+    <p>
+      Event-driven pipeline service integrating CodeCommit, GitHub,
+      CodeBuild, and CodeDeploy.
+    </p>
+  </article>
+
+  <!-- ===================== CODEARTIFACT ===================== -->
+  <article>
+    <h2>AWS CodeArtifact</h2>
+    <p>
+      <strong>Type:</strong> Package Management<br>
+      <strong>Use Cases:</strong> Store and share application dependencies
+    </p>
+    <p>
+      Managed artifact repository for npm, PyPI, Maven, and NuGet packages.
+    </p>
+  </article>
+
+  <!-- ===================== AWS CLI ===================== -->
+  <article>
+    <h2>AWS CLI</h2>
+    <p>
+      <strong>Type:</strong> Command Line Interface<br>
+      <strong>Use Cases:</strong> Automation, scripting, CI/CD integration
+    </p>
+    <p>
+      Unified CLI for managing AWS services from terminal scripts and pipelines.
+    </p>
+  </article>
+
+  <!-- ===================== AWS SDKs ===================== -->
+  <article>
+    <h2>AWS SDKs</h2>
+    <p>
+      <strong>Type:</strong> Application SDK Libraries<br>
+      <strong>Languages:</strong> Python, JavaScript, Java, Go, C#, Ruby
+    </p>
+    <p>
+      Enable applications to interact with AWS services programmatically.
+    </p>
+  </article>
+
+  <!-- ===================== AWS SAM ===================== -->
+  <article>
+    <h2>AWS SAM (Serverless Application Model)</h2>
+    <p>
+      <strong>Type:</strong> Serverless Infrastructure as Code<br>
+      <strong>Use Cases:</strong> Lambda, API Gateway, event-driven apps
+    </p>
+    <p>
+      Simplified IaC framework built on CloudFormation for serverless workloads.
+    </p>
+  </article>
+
+  <!-- ===================== AWS CDK ===================== -->
+  <article>
+    <h2>AWS CDK (Cloud Development Kit)</h2>
+    <p>
+      <strong>Type:</strong> Infrastructure as Code<br>
+      <strong>Languages:</strong> TypeScript, Python, Java, Go, C#
+    </p>
+    <p>
+      Define AWS infrastructure using real programming languages and generate
+      CloudFormation templates.
+    </p>
+  </article>
+
+  <!-- ===================== SYSTEMS MANAGER ===================== -->
+  <article>
+    <h2>AWS Systems Manager</h2>
+    <p>
+      <strong>Type:</strong> Operations & Automation<br>
+      <strong>Use Cases:</strong> Patching, runbooks, Parameter Store
+    </p>
+    <p>
+      Central service for managing, automating, and operating AWS resources.
+    </p>
+  </article>
+
+  <!-- ===================== X-RAY ===================== -->
+  <article>
+    <h2>AWS X-Ray</h2>
+    <p>
+      <strong>Type:</strong> Distributed Tracing<br>
+      <strong>Use Cases:</strong> Debugging microservices and latency issues
+    </p>
+    <p>
+      Traces requests across distributed systems and visualizes service maps.
+    </p>
+  </article>
+
+  <!-- ===================== FAULT INJECTION ===================== -->
+  <article>
+    <h2>AWS Fault Injection Service</h2>
+    <p>
+      <strong>Type:</strong> Chaos Engineering<br>
+      <strong>Use Cases:</strong> Resilience and failure testing
+    </p>
+    <p>
+      Injects controlled faults to validate system reliability and recovery.
+    </p>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section>
+    <h2>📊 AWS Developer Tools — Comparison (2025)</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Primary Use</th>
+          <th>Serverless</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CodeCommit</td><td>Source Control</td><td>Private Git repos</td><td>✅</td></tr>
+        <tr><td>CodeBuild</td><td>Build/Test</td><td>CI builds</td><td>✅</td></tr>
+        <tr><td>CodeDeploy</td><td>Deployment</td><td>EC2/ECS deployments</td><td>❌</td></tr>
+        <tr><td>CodePipeline</td><td>CI/CD</td><td>Pipeline orchestration</td><td>✅</td></tr>
+        <tr><td>CodeArtifact</td><td>Packages</td><td>Dependency management</td><td>✅</td></tr>
+        <tr><td>SAM</td><td>IaC</td><td>Serverless apps</td><td>—</td></tr>
+        <tr><td>CDK</td><td>IaC</td><td>Infrastructure as code</td><td>—</td></tr>
+        <tr><td>Systems Manager</td><td>Ops</td><td>Automation & config</td><td>—</td></tr>
+        <tr><td>X-Ray</td><td>Observability</td><td>Tracing</td><td>—</td></tr>
+        <tr><td>Fault Injection</td><td>Resilience</td><td>Chaos testing</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Developer Tools — Built by harish</p>
+</footer>
+
+</body>
+</html>
