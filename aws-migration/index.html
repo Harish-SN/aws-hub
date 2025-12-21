@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Migration & Transfer Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AWS Migration & Transfer Services</h1>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <p>
+      Covers AWS <strong>migration, transfer, replication,
+      backup, and modernization</strong> services used to move workloads,
+      applications, databases, and data into AWS.
+    </p>
+  </section>
+
+  <!-- ===================== DMS ===================== -->
+  <article>
+    <h2>AWS Database Migration Service (DMS)</h2>
+    <p>
+      <strong>Type:</strong> Database Migration & Replication<br>
+      <strong>Use Cases:</strong> Low-downtime homogeneous & heterogeneous DB migration
+    </p>
+
+    <h3>Overview</h3>
+    <p>DMS migrates databases to AWS with minimal downtime.</p>
+    <ul>
+      <li>Supports Oracle, MySQL, PostgreSQL, SQL Server, MongoDB, etc.</li>
+      <li>Change Data Capture (CDC) for continuous replication.</li>
+      <li>Works with AWS SCT for schema conversion.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SCT ===================== -->
+  <article>
+    <h2>AWS Schema Conversion Tool (SCT)</h2>
+    <p>
+      <strong>Type:</strong> Schema & Code Transformation<br>
+      <strong>Use Cases:</strong> Cross-engine database migrations
+    </p>
+
+    <h3>Overview</h3>
+    <p>SCT converts database schemas and code when migrating to new engines.</p>
+    <ul>
+      <li>Converts tables, indexes, views, functions, procedures.</li>
+      <li>Includes SCT Data Extraction Agent for large databases.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SMS (DEPRECATED) ===================== -->
+  <article>
+    <h2>AWS Server Migration Service (SMS Classic)</h2>
+    <p>
+      <strong>Type:</strong> VM Migration (Legacy)<br>
+      <strong>Status:</strong> ❌ Deprecated — Do Not Use
+    </p>
+
+    <h3>Overview</h3>
+    <p>
+      SMS was used for migrating on-prem VMs to AWS but is now deprecated.
+      Use <strong>AWS Application Migration Service (MGN)</strong> instead.
+    </p>
+    <ul>
+      <li>Incremental VM replication.</li>
+      <li>Kept only for historical reference.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== MGN ===================== -->
+  <article>
+    <h2>AWS Application Migration Service (MGN)</h2>
+    <p>
+      <strong>Type:</strong> Lift & Shift (Rehost)<br>
+      <strong>Use Cases:</strong> Migrate physical & virtual servers to EC2
+    </p>
+
+    <h3>Overview</h3>
+    <p>MGN is AWS’s primary large-scale server migration service.</p>
+    <ul>
+      <li>Continuous block-level replication.</li>
+      <li>Automated testing and cutover.</li>
+      <li>Scales to thousands of servers.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== BACKUP ===================== -->
+  <article>
+    <h2>AWS Backup</h2>
+    <p>
+      <strong>Type:</strong> Backup & Restore (Migration Support)<br>
+      <strong>Use Cases:</strong> Backup during migration, DR, rollback
+    </p>
+
+    <h3>Overview</h3>
+    <p>AWS Backup provides centralized, policy-based backup management.</p>
+    <ul>
+      <li>EBS, RDS, DynamoDB, EFS, FSx, EC2.</li>
+      <li>Cross-account & cross-region backups.</li>
+      <li>Used to protect workloads during migration.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== DATASYNC ===================== -->
+  <article>
+    <h2>AWS DataSync</h2>
+    <p>
+      <strong>Type:</strong> Online Data Transfer<br>
+      <strong>Use Cases:</strong> Move files between on-prem and AWS storage
+    </p>
+
+    <h3>Overview</h3>
+    <p>Automated, high-speed data transfer service.</p>
+    <ul>
+      <li>Transfers data to S3, EFS, FSx.</li>
+      <li>Optimized and encrypted transfer.</li>
+      <li>Supports NFS and SMB.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== SNOW FAMILY ===================== -->
+  <article>
+    <h2>AWS Snow Family</h2>
+    <p>
+      <strong>Models:</strong> Snowcone, Snowball Edge, Snowmobile<br>
+      <strong>Use Cases:</strong> Offline and edge data migration
+    </p>
+
+    <h3>Overview</h3>
+    <p>Used when network transfer is slow or impractical.</p>
+    <ul>
+      <li><strong>Snowcone:</strong> Small, portable edge device.</li>
+      <li><strong>Snowball Edge:</strong> Up to 80 TB + compute.</li>
+      <li><strong>Snowmobile:</strong> Up to 100 PB per truck.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== TRANSFER FAMILY ===================== -->
+  <article>
+    <h2>AWS Transfer Family</h2>
+    <p>
+      <strong>Protocols:</strong> SFTP, FTPS, FTP<br>
+      <strong>Use Cases:</strong> Managed file transfer into AWS
+    </p>
+
+    <h3>Overview</h3>
+    <p>Fully managed file transfer service backed by AWS storage.</p>
+    <ul>
+      <li>Integrates with S3 and EFS.</li>
+      <li>Supports IAM, custom IdPs, and custom domains.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== MIGRATION HUB ===================== -->
+  <article>
+    <h2>AWS Migration Hub</h2>
+    <p>
+      <strong>Type:</strong> Migration Tracking Dashboard<br>
+      <strong>Use Cases:</strong> Central migration visibility
+    </p>
+
+    <h3>Overview</h3>
+    <p>Provides a single place to track application migrations.</p>
+    <ul>
+      <li>Tracks DMS, MGN, DataSync migrations.</li>
+      <li>Application-centric migration view.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== STRATEGY ===================== -->
+  <article>
+    <h2>Migration Hub Strategy Recommendations</h2>
+    <p>
+      <strong>Type:</strong> Migration & Modernization Planning<br>
+      <strong>Use Cases:</strong> Application portfolio assessment
+    </p>
+
+    <h3>Overview</h3>
+    <p>Analyzes workloads and recommends migration strategies.</p>
+    <ul>
+      <li>7 Rs: Rehost, Replatform, Refactor, Repurchase, Relocate, Retain, Retire.</li>
+      <li>Uses static code & dependency analysis.</li>
+    </ul>
+  </article>
+
+  <!-- ===================== COMPARISON ===================== -->
+  <section>
+    <h2>📊 Comparison Table — Migration & Transfer</h2>
+
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Category</th>
+          <th>Best Use Case</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>DMS</td><td>DB Migration</td><td>Low-downtime DB moves</td><td>CDC supported</td></tr>
+        <tr><td>SCT</td><td>Schema Conversion</td><td>Cross-engine migration</td><td>Oracle → Aurora</td></tr>
+        <tr><td>MGN</td><td>Server Migration</td><td>Lift & Shift</td><td>Primary VM migration tool</td></tr>
+        <tr><td>DataSync</td><td>Data Transfer</td><td>File movement</td><td>Online, encrypted</td></tr>
+        <tr><td>Snow Family</td><td>Offline Transfer</td><td>PB-scale data</td><td>Edge compute supported</td></tr>
+        <tr><td>Transfer Family</td><td>File Transfer</td><td>SFTP/FTPS/FTP</td><td>S3/EFS backend</td></tr>
+        <tr><td>Migration Hub</td><td>Tracking</td><td>Migration visibility</td><td>App-centric</td></tr>
+        <tr><td>Strategy Recs</td><td>Planning</td><td>7R analysis</td><td>Modernization guidance</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>AWS Migration & Transfer Services — Built by Harish</p>
+</footer>
+
+</body>
+</html>
